@@ -1,0 +1,23 @@
+{
+  "id": "2851497",
+  "name": "myvnotes",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1123",
+      "name": "复制文件",
+      "font_class": "fuzhiwenjian",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7542761",
+      "name": "24gf-tags2",
+      "font_class": "24gf-tags2",
+      "unicode": "e887",
+      "unicode_decimal": 59527
+    }
+  ]
+}
