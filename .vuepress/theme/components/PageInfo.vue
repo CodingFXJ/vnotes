@@ -73,7 +73,8 @@ export default defineComponent({
     }
 
     const formatDateValue = (value) => {
-      return new Intl.DateTimeFormat(instance.$lang).format(new Date(value))
+				 return value.split('T')[0]
+      // return new Intl.DateTimeFormat(instance.$lang).format(new Date(value))
     }
 
     return { numStyle, goTags, formatDateValue }

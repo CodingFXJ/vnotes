@@ -1,27 +1,36 @@
 /* eslint-disable no-proto */
 import { addLinkToHead } from './utils'
-export function getOneColor () {
-  const tagColorArr = [
-    '#e15b64',
-    '#f47e60',
-    '#f8b26a',
-    '#abbd81',
-    '#849b87',
-    '#e15b64',
-    '#f47e60',
-    '#f8b26a',
-    '#f26d6d',
-    '#67cc86',
-    '#fb9b5f',
-    '#3498db'
-  ]
-  const index = Math.floor(Math.random() * tagColorArr.length)
-  return tagColorArr[index]
+export function getOneColor() {
+    const tagColorArr = [
+        "#a29bfe",
+        "#74b9ff",
+        "#7ad3d3",
+        "#7dddc2",
+        "#96d9d4",
+        "#f5a997",
+        "#86d597",
+        "#efc472",
+        "#ed85aa",
+        '#f58f96',
+        '#f47e60',
+        '#f8b26a',
+        '#abbd81',
+        '#e15b64',
+        '#f47e60',
+        '#f8b26a',
+        '#f26d6d',
+        '#67cc86',
+        '#fb9b5f',
+        '#5ebaf7',
+
+    ]
+    const index = Math.floor(Math.random() * tagColorArr.length)
+    return tagColorArr[index]
 }
 
-export function registerCodeThemeCss (theme = 'tomorrow') {
-  const themeArr = ['tomorrow', 'funky', 'okaidia', 'solarizedlight', 'default']
-  const href = `//prismjs.com/themes/prism${themeArr.indexOf(theme) > -1 ? `-${theme}` : ''}.css`
+export function registerCodeThemeCss(theme = 'tomorrow') {
+    const themeArr = ['tomorrow', 'funky', 'okaidia', 'solarizedlight', 'default']
+    const href = `//prismjs.com/themes/prism${themeArr.indexOf(theme) > -1 ? `-${theme}` : ''}.css`
 
   addLinkToHead(href)
 }

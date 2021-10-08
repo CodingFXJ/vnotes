@@ -1,6 +1,6 @@
 <template>
   <div class="mode-options">
-    <h4 class="title">Choose mode</h4>
+    <h4 class="title" style="text-align: center;">切换模式</h4>
     <ul class="color-mode-options">
       <li
         v-for="(mode, index) in modeOptions"

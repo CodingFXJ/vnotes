@@ -32,7 +32,7 @@ export default defineComponent({
     list-style-type none
     &.sidebar-links
       > li
-        background $accentColor
+        background  #cdecde
   a
     display inline-block
   .nav-links
@@ -49,7 +49,7 @@ export default defineComponent({
   & > .sidebar-links
     padding 1rem 0
     & > li 
-      background: #b1efd3 !important
+      background: #b7f3d8 !important
     & > li > a.sidebar-link
       font-size 1em
       line-height 1.7

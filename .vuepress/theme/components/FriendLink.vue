@@ -18,8 +18,10 @@
             class="popup-window"
             :style="popupWindowStyle"
             ref="popupWindow">
-            <div class="logo">
-              <img :src="getImgUrl(item)" />
+            <div class="logo"  >
+              <!-- <img :src="getImgUrl(item)" /> -->
+              <img src="/head.jpg" />
+
             </div>
             <div class="info">
               <div class="title">
@@ -146,7 +148,7 @@ export default defineComponent({
   .friend-link-item
     position relative
     vertical-align: middle;
-    margin: 4px 4px 10px;
+    margin: 4px 6px 10px;
     padding: 4px 8px 4px 20px;
     line-height 20px
     display: inline-block;

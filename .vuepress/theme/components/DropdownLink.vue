@@ -78,8 +78,9 @@ export default defineComponent({
       color inherit
       line-height 1.7rem
       h4
-        margin 0.45rem 0 0
-        border-top 1px solid var(--border-color)
+        margin  0 0 3px 0
+        color: #3eaf7c;
+        border-top 1px solid #eee
         padding 0.45rem 1.5rem 0 1.25rem
       .dropdown-subitem-wrapper
         padding 0

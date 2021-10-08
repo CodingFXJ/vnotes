@@ -83,8 +83,9 @@ a.sidebar-link
   &.active
     font-weight 600
     color $accentColor
+    padding-left calc(2.25rem - 4px)
     background var(--default-color-8)
-    border-right 3px solid $accentColor
+    border-left 4px solid $accentColor
   .sidebar-group &
     // padding-left 2rem
   .sidebar-sub-headers &
