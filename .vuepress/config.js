@@ -33,13 +33,24 @@ module.exports = {
                 "link": "/",
                 "icon": "reco-home"
             },
+
             {
-                "text": "时间线",
+                "text": '社区',
+                "icon": 'iconfont icon-wodeshequ',
+                "items": [
+                    { "text": 'Gitee', "link": 'https://gitee.com/GiteeFXJ', "icon": 'iconfont icon-gitee2' },
+                    { "text": 'GitHub', "link": 'https://github.com/CodingFXJ', "icon": 'reco-github' },
+                    { "text": 'HexoBlog', "link": 'https://codingfxj.github.io/', "icon": 'iconfont icon-hexo' },
+
+                ]
+            },
+            {
+                "text": "时线",
                 "link": "/timeline/",
                 "icon": "reco-date"
             },
             {
-                "text": '工具箱',
+                "text": '宝箱',
                 "icon": 'iconfont icon-tool-fill',
                 "items": [{
                         "text": '在线编辑',
@@ -61,20 +72,14 @@ module.exports = {
                 ]
             },
             {
-                "text": '社区',
-                "icon": 'iconfont icon-wodeshequ',
-                "items": [
-                    { "text": 'Gitee', "link": 'https://gitee.com/GiteeFXJ', "icon": 'iconfont icon-gitee2' },
-                    { "text": 'GitHub', "link": 'https://github.com/CodingFXJ', "icon": 'reco-github' },
-                    { "text": 'HexoBlog', "link": 'https://codingfxj.github.io/', "icon": 'iconfont icon-hexo' },
-
-                ]
-            },
-            {
                 "text": '酷站',
                 "icon": 'iconfont icon-lianjiedian-connection-points',
                 "items": [
+                    { "text": 'Vnav', "link": 'http://codingfxj.3vhost.net/index.html' },
+                    { "text": '小霸王', "link": 'https://www.yikm.net/' },
                     { "text": 'CyberMap', "link": 'https://cybermap.kaspersky.com/' },
+                    { "text": 'weavesilk', "link": 'http://weavesilk.com/' },
+                    { "text": 'windows93', "link": 'http://www.windows93.net/' },
                     { "text": 'WebGL-Fluid', "link": 'https://paveldogreat.github.io/WebGL-Fluid-Simulation/' },
 
                 ]

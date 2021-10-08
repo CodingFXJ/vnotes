@@ -26,7 +26,8 @@
           class="last-updated"
           v-if="lastUpdated"
         >
-          <span class="prefix">{{ lastUpdatedText }}: </span>
+          <!-- <span class="prefix">{{ lastUpdatedText }}: </span> -->
+          <span class="prefix">最新更新: </span>
           <span class="time">{{ lastUpdated }}</span>
         </div>
       </footer>
@@ -97,7 +98,9 @@ export default defineComponent({
     })
 
     const lastUpdated = computed(() => {
+
       if (instance.$themeConfig.lastUpdated === false) return false
+      console.log(instance.$page.lastUpdated);
       return instance.$page.lastUpdated
     })
 
@@ -106,6 +109,7 @@ export default defineComponent({
         return instance.$themeLocaleConfig.lastUpdated
       }
       if (typeof instance.$themeConfig.lastUpdated === 'string') {
+       
         return instance.$themeConfig.lastUpdated
       }
       return 'Last Updated'

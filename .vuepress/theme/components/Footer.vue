@@ -81,9 +81,10 @@ export default defineComponent({
   .footer {
     text-align: left!important;
     > span {
-      display block
-      margin-left 0
-      line-height 2rem
+      display: inline-block;
+      margin-left: 0;
+      line-height: 2rem;
+      margin: 0 5px;
     }
   }
 }

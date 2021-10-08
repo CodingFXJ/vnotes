@@ -99,7 +99,11 @@ export default defineComponent({
     &:hover
       color $accentColor
 @media (max-width: $MQMobile)
-  .tags
-    display block
-    margin-left 0 !important
+   
+    .page-title>div>i:first-of-type {
+      display: none !important;
+    }
+    .tags
+      display inline-block
+      margin-left 0 !important
 </style>
