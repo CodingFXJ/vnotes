@@ -110,19 +110,18 @@ module.exports = {
         },
         "type": "blog",
         "friendLink": [{
+                "title": "HexoBlog",
+                "link": "https://codingfxj.github.io/"
+            },
+            {
                 "title": "vuepress",
-                "desc": "Vue 驱动的静态网站生成器",
                 "link": "https://www.vuepress.cn/"
             }, {
                 "title": "午后南杂",
-                "desc": "Enjoy when you can, and endure when you must.",
-                "email": "1156743527@qq.com",
                 "link": "https://www.recoluan.com"
             },
             {
-                "title": "vuepress-theme-reco",
-                "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-                "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+                "title": "recotheme",
                 "link": "https://vuepress-theme-reco.recoluan.com"
             },
             {
@@ -152,10 +151,53 @@ module.exports = {
     plugins: [
         ["vuepress-plugin-auto-sidebar"],
         ["vuepress-plugin-nuggets-style-copy", {
-            copyText: "复制",
+            // copyText: "复制",
+            copyText: "",
             tip: {
                 content: "复制成功!"
             }
+        }],
+        [
+            'meting', {
+                // auto: "https://xxxxxxxxxxxx", //你的歌单的链接，网页歌单链接
+                meting: {
+                    mini: true,
+                    fixed: true,
+                    server: "netease", //歌单的平台、我这里是QQ音乐的平台
+                    type: "playlist",
+                    mid: "7013045772", //链接后面的id
+                }, // 不配置该项的话不会出现全局播放器
+                aplayer: {
+                    autoplay: false,
+                    // 吸底模式
+                    fixed: true,
+                    mini: true,
+                    // 歌曲栏折叠
+                    listFolded: true,
+                    // 颜色
+                    theme: '#67cc86',
+                    // 播放顺序为随机
+                    order: 'random',
+                    // 初始音量
+                    volume: 0.1,
+                    // 关闭歌词显示
+                    lrcType: 0
+                },
+                mobile: {
+                    // 手机端去掉cover图
+                    cover: false,
+                }
+            }
+        ],
+        ['@vuepress/pwa', {
+            serviceWorker: true,
+            updatePopup: {
+                message: "发现新内容可用",
+                buttonText: "刷新"
+            }
+        }],
+        ['@vuepress-reco/vuepress-plugin-rss', {
+            site_url: 'https://giteefxj.gitee.io/vnotes'
         }]
     ],
 }

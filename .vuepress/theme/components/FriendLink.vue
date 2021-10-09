@@ -179,7 +179,7 @@ export default defineComponent({
         border-radius $borderRadius
         box-sizing border-box
         padding .8rem 1rem
-        width 280px
+        width 220px
         .logo
           margin-right .4rem
           width 2rem
