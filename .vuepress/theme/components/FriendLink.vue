@@ -20,7 +20,7 @@
             ref="popupWindow">
             <div class="logo"  >
               <!-- <img :src="getImgUrl(item)" /> -->
-              <img src="/head.jpg" />
+              <img src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20211008232806.jpg" />
 
             </div>
             <div class="info">
