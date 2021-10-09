@@ -38,25 +38,65 @@
     background: rgb(143, 220, 223) !important;
 }
 
-
-/* //主页，评论偏左 */
-
-
-/* .page,
-.password-wrapper-in {
-    margin-left: 8rem !important;
-} 
-
-目录样式
-element.style {
-    display: flex; 
-    top: 50px;
-    right: 10px;
-    border: 1px solid #ccc;
-    padding: 20px 10px;
-    box-shadow: 0 0 3px #eee;
+/* 文章详情目录 右侧固定*/
+.page>section{
+    transform: none!important;
 }
-*/
+.page .content__default .table-of-contents{
+    position: fixed;
+    right: 2%;
+    font-size: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #eee;
+    padding: 1em;
+    box-shadow: 0 0 3px #eee;
+    background: #fff;
+    z-index: 99;
+    min-height: 45vh;
+    max-height: 65vh;
+    overflow: auto;
+}
+ 
+.page .content__default .table-of-contents>ul{
+    list-style: none;
+}
+.page .content__default .table-of-contents>ul>li>a{
+   text-decoration: none;
+   max-width: 200px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   display: block;
+}
+.page .content__default .table-of-contents>ul>li>a:hover{
+    color:#49b1f5;
+    font-weight: 500;
+}
+.back-to-ceiling{
+    z-index: 99999;
+}
+div[class][class*="language-"]::before{
+    right:50px !important;
+}
+ 
+/* 有目录时内容布局 */
+/* .content__default{
+    max-width: 860px;
+    margin: 0px auto;
+    margin-left: 13%;
+    padding: 2rem 2.5rem;
+} */
+/* .content__default:not(.custom){
+    margin-left: 10% !important;
+} */
+ 
+.v-copy-code-btn {
+    color: #b2bec3 !important;
+}
+.v-copy-code-btn:hover {
+    color:#67cc86 !important
+}
 
 #valine .vwrap .vedit #veditor {
     background: url('/znote/img/other/comment.png');
@@ -116,10 +156,8 @@ summary {
 #valine .vwrap .vheader .vinput {
     font-weight: 550;
 }
-
-@media screen and(max-width:768px) {
-    div.line-numbers-mode {
-        margin: 0;
-        border-radius: 5px !important;
-    }
+/* 代码块 */
+div.line-numbers-mode {
+    margin-bottom: 2em;
 }
+ 

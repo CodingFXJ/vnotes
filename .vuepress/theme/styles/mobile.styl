@@ -11,6 +11,8 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
     margin-left $mobileSidebarWidth
 
 // wide mobile
+ 
+
 @media (max-width: $MQMobile)
   .sidebar
     top 0
@@ -34,7 +36,11 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
   h1
     font-size 1.9rem
   .content__default
+
     div[class*="language-"]
-      margin: 0;
-      border-radius: 6px;
+      margin-bottom: 2em;
+      border-radius: 5px;
       overflow hidden
+    .table-of-contents
+        display: none !important;
+    
