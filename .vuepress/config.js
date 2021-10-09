@@ -20,6 +20,7 @@ module.exports = {
         ],
         ["link", { rel: "stylesheet", href: "/css/znote.css" }],
         ["link", { rel: "stylesheet", href: "/fonts/iconfont.css" }],
+        ["script", { src: "/js/myjs.js" }]
     ],
     "theme": "reco",
     "themeConfig": {
@@ -151,7 +152,7 @@ module.exports = {
     plugins: [
         ["vuepress-plugin-auto-sidebar"],
         ["vuepress-plugin-nuggets-style-copy", {
-            copyText: "",
+            copyText: "复制",
             tip: {
                 content: "复制成功!"
             }
