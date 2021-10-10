@@ -21,7 +21,7 @@ body
 
 .navbar
   position fixed
-  z-index 20
+  z-index 9999
   top 0
   left 0
   right 0
@@ -44,7 +44,6 @@ body
   width 18vw
   // width $sidebarWidth
   position fixed
-  z-index 10
   margin 0
   top $navbarHeight
   left 0
@@ -52,7 +51,8 @@ body
   box-sizing border-box
   border-right 1px solid var(--border-color)
   overflow-y auto
-
+  z-index: 100
+  min-width 200px
 .content__default:not(.custom)
   @extend $wrapper
   a:hover
@@ -111,23 +111,45 @@ strong
 h1,h2
   font-weight 600
   line-height 1.25
+  position relative
   .content__default:not(.custom) > &
       margin: 3.5rem 0 2.5rem 0;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
       border: 1px solid #ccc;
+      border-left: 5px solid #3eaf7c
       color:#3eaf7c
-    // &:first-child
- h3, h4, h5, h6
-  font-weight 550
-  line-height 1.25
-  .content__default:not(.custom) > &
-      margin: 2.5rem 0 2.5rem 0;
-      padding: 0.5rem 1rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ccc;
-    // &:first-child
-      
+
+h3, h4, h5, h6
+    font-weight 550
+    line-height 1.25
+    .content__default:not(.custom) > &
+        margin: 2.5rem 0 2.5rem 0;
+        padding: 0.5rem 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
+        position:relative
+        &::after
+          content: '';
+          position: absolute;
+          left: -1px;
+          bottom: -1px;
+          width: 0;
+          height: 0;
+          border: 12px solid transparent;
+          border-bottom-color: #3eaf7c;
+.content__default      
+  h1,h2
+    &::after
+      content: '';
+      position: absolute;
+      width: 0;
+      height:0;
+      right: -1px;
+      top: -1px;
+      border: 10px solid transparent;
+      border-right-color: #3eaf7c;
+      border-top-color: #3eaf7c;
 
 h1
   font-size 1.6rem
@@ -195,7 +217,6 @@ th, td
 
 .iconfont
   font-family: "iconfont",Ubuntu,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif !important
-  font-size: 13px;
   color: var(--text-color-sub);
 
 /************** 滚动条 **************/

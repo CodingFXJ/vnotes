@@ -23,13 +23,25 @@
     </div>
   </div>
   <ul class="social-links">
-    <li
+    <!-- <li
       class="social-item"
       v-for="(item, index) in socialLinks"
       :key="index"
     >
       <reco-icon :icon="item.icon" :link="item.link" :style="{ color: item.color }" />
+    </li> -->
+    <li class="social-item" >
+      <reco-icon  class="iconfont icon-gitee2" link="https://gitee.com/GiteeFXJ " style="color:#e5252b"/>
     </li>
+    <li class="social-item" >
+      <reco-icon  class="iconfont reco-github" link="https://github.com/CodingFXJ" style="color:#24292F" />
+    </li>
+    <li class="social-item" >
+      <reco-icon  class="iconfont icon-hexo" link="https://codingfxj.github.io/"  style="color:#49b1f5"/>
+    </li>
+    <li class="social-item" >
+      <reco-icon  class="iconfont icon-QQ" link="http://wpa.qq.com/msgrd?v=3&uin=3010099292&site=qq&menu=yes"  style="color:#49b1f5;font-size:26px"/>
+    </li> 
   </ul>
   <hr>
 </div>
@@ -95,6 +107,7 @@ export default defineComponent({
     display flex
     flex-wrap wrap
     padding 10px
+    justify-content center
     .social-item {
       width 39px
       height 36px
@@ -103,7 +116,7 @@ export default defineComponent({
       list-style none
       transition transform .3s
       &:hover {
-        transform scale(1.08)
+        transform scale(1.18)
       }
       i {
         cursor pointer

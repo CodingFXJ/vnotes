@@ -42,6 +42,10 @@
      margin-left: 3rem !important;
  }
  
+ .sidebar-links {
+     padding: 1rem 0 2rem !important;
+ }
+ 
  @media screen and (max-width: 1290px) {
      .page {
          margin-left: 18vw !important;
@@ -51,6 +55,15 @@
  
  .back-to-ceiling {
      bottom: 4rem !important;
+ }
+ /* 搜索图标 */
+ 
+ .search-box .iconfont {
+     font-size: 18px !important;
+ }
+ 
+ .iconfont.icon-lianjiedian-connection-points {
+     font-weight: 600;
  }
  /* 文章详情目录 右侧固定*/
  

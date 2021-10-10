@@ -150,12 +150,19 @@ module.exports = {
         "lineNumbers": true
     },
     plugins: [
+
         ["vuepress-plugin-auto-sidebar"],
         ["vuepress-plugin-nuggets-style-copy", {
             // copyText: "复制",
             copyText: "",
             tip: {
                 content: "复制成功!"
+            }
+        }],
+        ['@vuepress/medium-zoom', {
+            selector: '.content__default>img',
+            options: {
+                margin: 16
             }
         }],
         [
