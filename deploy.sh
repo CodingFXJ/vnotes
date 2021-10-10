@@ -1,27 +1,26 @@
-# 确保脚本抛出遇到的错误
-set -e
+
 
 # 生成静态文件
-echo "开始打包静态文件..."
+echo -e "\n\n\n=========开始打包静态文件...=========\n\n\n"
 
 npm run build
-echo "静态文件打包完毕！"
+echo -e "\n\n\n=========静态文件打包完毕！=========\n\n\n"
 
 # 进入生成的文件夹
 
-echo "进入public文件夹！"
+echo -e "\n\n\n=========进入public文件夹！=========\n\n\n"
 cd public/
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 
-echo "初始化git..."
+echo -e "\n\n\n=========初始化git...=========\n\n\n"
 git init
 
-echo "将所有更改提交至暂存区---"
+echo -e "\n\n\n=========将所有更改提交至暂存区=========\n\n\n"
 git add -A
 
-echo "将暂存区内容添加到本地仓库中..."
+echo -e "\n\n\n=========将暂存区内容添加到本地仓库中=========\n\n\n"
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io
@@ -29,19 +28,19 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 
-echo "开始强制推送打包后的博客静态资源..."
+echo -e "\n\n\n=========开始强制推送打包后的博客静态资源......=========\n\n\n"
  git push -f git@gitee.com:GiteeFXJ/vnotes.git master:gh-pages
 
 
- echo "返回Vnotes根目录---"
+ echo -e "\n\n\n=========返回Vnotes根目录=========\n\n\n"
 cd ..
 
-echo "将所有源码更改提交至暂存区---"
+echo -e "\n\n\n=========将所有源码更改提交至暂存区=========\n\n\n"
 git add .
 
-echo "将暂存区源码添加到本地仓库中..."
+echo -e "\n\n\n=========将暂存区源码添加到本地仓库中=========\n\n\n"
 git commit -m 'vnotes-src'
 
-echo "开始强制推送博客源码..."
+echo -e "\n\n\n=========开始强制推送博客源码=========\n\n\n"
 git push -f origin master
 
