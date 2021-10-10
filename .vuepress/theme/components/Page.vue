@@ -57,6 +57,7 @@
     <ModuleTransition>
       <SubSidebar v-if="recoShowModule" class="side-bar" />
     </ModuleTransition>
+    <!-- <div v-if="recoShowModule" class="caidan"><i class="iconfont icon-caidan"></i> </div> -->
   </main>
 </template>
 
@@ -164,7 +165,6 @@ export default defineComponent({
     const pageStyle = computed(() => {
       return instance.$showSubSideBar ? {} : { paddingRight: '0' }
     })
-
     return {
       recoShowModule,
       shouldShowComments,
@@ -274,9 +274,23 @@ function flatten (items, res) {
       height: 100%;
       content: '';
       border-left: 5px solid #3eaf7c;
-   
-
- 
+  // .caidan 
+  //   position: fixed;
+  //   right: 1rem;
+  //   bottom: 6.8rem;
+  //   width: 2.5rem;
+  //   height: 2.5rem;
+  //   border-radius: 0.25rem;
+  //   line-height: 2.5rem;
+  //   color: #3eaf7c;
+  //   text-align: center;
+  //   background-color :#fff;
+  //   z-index :999
+  //   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  //   .icon-caidan
+  //     font-size: 26px;
+  //     font-weight: 600;
+  //     color: #3eaf7c;
 
   .page-edit
     @extend $wrapper

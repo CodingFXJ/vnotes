@@ -6,7 +6,9 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
 @media (max-width: $MQNarrow)
   .sidebar
     font-size 15px
-    width $mobileSidebarWidth
+    width 18vw
+    // width $mobileSidebarWidth
+
   .page, .password-wrapper-in
     margin-left $mobileSidebarWidth
 
@@ -14,6 +16,10 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
  
 
 @media (max-width: $MQMobile)
+  .page 
+    .content__default 
+      .table-of-contents
+        display: none
   .sidebar
     top 0
     padding-top $navbarHeight

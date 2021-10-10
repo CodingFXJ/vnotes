@@ -20,7 +20,8 @@ module.exports = {
         ],
         ["link", { rel: "stylesheet", href: "/css/znote.css" }],
         ["link", { rel: "stylesheet", href: "/fonts/iconfont.css" }],
-        ["script", { src: "/js/myjs.js" }]
+        ["script", { src: "/js/myjs.js" }],
+
     ],
     "theme": "reco",
     "themeConfig": {

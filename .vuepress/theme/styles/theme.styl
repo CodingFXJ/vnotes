@@ -41,7 +41,8 @@ body
 .sidebar
   font-size 16px
   background-color var(--background-color)
-  width $sidebarWidth
+  width 18vw
+  // width $sidebarWidth
   position fixed
   z-index 10
   margin 0
@@ -107,14 +108,24 @@ ul, ol
 strong
   font-weight 600
 
-h1, h2, h3, h4, h5, h6
-  font-weight 500
+h1,h2
+  font-weight 600
+  line-height 1.25
+  .content__default:not(.custom) > &
+      margin: 3.5rem 0 2.5rem 0;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      color:#3eaf7c
+    // &:first-child
+ h3, h4, h5, h6
+  font-weight 550
   line-height 1.25
   .content__default:not(.custom) > &
       margin: 2.5rem 0 2.5rem 0;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
-      border: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
     // &:first-child
       
 
