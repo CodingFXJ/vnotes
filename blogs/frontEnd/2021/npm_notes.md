@@ -24,11 +24,11 @@ npm（Node Package Manager）是 node 的包管理器，它是随着 NodeJs 安�
 
 
 
-### 二、npm常用命令
+## 二、npm常用命令
 
 - 查看
 
-```
+```bash
 nmp -v                   #查看npm版本
 npm -init                #初始化，创建package.json文件
 npm init --yes           #直接参加创建 package.json 文件
@@ -41,7 +41,7 @@ npm root -g              #查看全局安装包的存放位置
 
 - 安装与删除
 
-```
+```bash
 npm install 包名 --save / s   #安装并添加dependencies 属性
 npm install 包名 --save-dev   #安装并添加devDependencies 属性
 npm install 包名 -D           #安装并添加开发环境依赖
@@ -53,7 +53,7 @@ npm audit fix            #包的修复、包的更新
 
 - [镜像安装](http://npm.taobao.org/mirrors/npm/)
 
-```
+```bash
 npm config set registry https://registry.npm.taobao.org
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 npm config get registry     #验证镜像服务器安装是否成功
@@ -62,7 +62,7 @@ cnpm install xxx            #使用镜像服务器
 
 ### package.json文件
 
-```
+```json
 {
   "name": "1-npm",      #包的名字
   "version": "1.0.0",   #包的版本

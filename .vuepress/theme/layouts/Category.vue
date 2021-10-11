@@ -92,7 +92,7 @@ export default defineComponent({
       transition: all .5s
       background-color var(--background-color)
       &:hover, &.active {
-        background-color :#63cdda
+        background-color :#9bc8f7
         a span.category-name {
           color #fff
           .post-num {

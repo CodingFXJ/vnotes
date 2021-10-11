@@ -42,7 +42,7 @@ export default defineComponent({
   span
     vertical-align: middle;
     margin: 4px 6px 10px;
-    padding: 4px 8px 6px;
+    padding: 5px 8px 6px;
     display: inline-block;
     cursor: pointer;
     border-radius: $borderRadius

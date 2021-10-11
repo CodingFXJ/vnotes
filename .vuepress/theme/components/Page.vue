@@ -101,8 +101,9 @@ export default defineComponent({
     const lastUpdated = computed(() => {
 
       if (instance.$themeConfig.lastUpdated === false) return false
-      console.log(instance.$page.lastUpdated);
-      return instance.$page.lastUpdated
+      let timeArr = instance.$page.lastUpdated.split(',');
+      let formatTime = timeArr[0].split('/').reverse().join("-")+timeArr[1]
+      return formatTime
     })
 
     const lastUpdatedText = computed(() => {
