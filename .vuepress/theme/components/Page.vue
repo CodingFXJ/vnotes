@@ -27,7 +27,7 @@
           v-if="lastUpdated"
         >
           <!-- <span class="prefix">{{ lastUpdatedText }}: </span> -->
-          <span class="prefix">最新更新: </span>
+          <span class="prefix">最新更新&nbsp;: </span>
           <span class="time">{{ lastUpdated }}</span>
         </div>
       </footer>
@@ -102,7 +102,7 @@ export default defineComponent({
 
       if (instance.$themeConfig.lastUpdated === false) return false
       let timeArr = instance.$page.lastUpdated.split(',');
-      let formatTime = timeArr[0].split('/').reverse().join("-")+timeArr[1]
+      let formatTime = timeArr[0].split('/').reverse().join("-")+"\xa0"+timeArr[1]
       return formatTime
     })
 
