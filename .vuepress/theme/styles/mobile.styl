@@ -37,7 +37,11 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
         padding-top: 0
   .password-shadow
     padding-left 0
-
+::-webkit-scrollbar-thumb 
+     box-shadow: inset 0 0 2px #f1f1f1 !important;
+     -webkit-box-shadow: inset 0 0 2px #f1f1f1 !important;
+ 
+ 
 // narrow mobile
 @media (max-width: $MQMobileNarrow)
   h1
@@ -47,7 +51,6 @@ $mobileSidebarWidth = $sidebarWidth * 0.82
     div[class*="language-"]
       margin-bottom: 2em;
       border-radius: 5px;
-      overflow hidden
     .table-of-contents
         display: none !important;
     
