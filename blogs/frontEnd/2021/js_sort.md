@@ -22,7 +22,7 @@ let str4 = '{[()]}'	//true
 
 **解决方案：**
 
-```js
+```js {11-19}
 const isValid = function(str) {
     let map = {
         ')': '(',
@@ -59,7 +59,7 @@ const isValid = function(str) {
 
 **随机生成测试数组**
 
-```js
+```js {3}
 var testArr = []
 for (var i = 0; i < 10000; i++) {
      testArr.push(Math.floor(Math.random() * 100000))
@@ -68,7 +68,7 @@ for (var i = 0; i < 10000; i++) {
 
 
 
-```js
+```js {9-13}
 arr = [3,7,6,9,4,5,2,8]
 const selectSort = (arr) => {
 if (!Array.isArray(arr)) {
@@ -93,7 +93,7 @@ return arr
 
 ## 三、快速排序
 
-```js
+```js {7,10-19}
 var quickSort = function(arr) {
     if (arr.length <= 1) {
         return arr;
@@ -129,7 +129,7 @@ var quickSort = function(arr) {
 
 `arr[preIndex]`后移索引变为`preIndex+1`，`current`插入到`arr[preIndex]`前一位，也就是`arr[preindex-1+1]`
 
-```js
+```js {8-12}
 function insertSort(arr) {
     let len = arr.length;
     let preIndex, current;
@@ -151,7 +151,7 @@ function insertSort(arr) {
 
 ## 五、希尔排序
 
-```js
+```js {10-14,6}
 function shellSort(array) {
     let gap = Math.floor(array.length / 2);
 
