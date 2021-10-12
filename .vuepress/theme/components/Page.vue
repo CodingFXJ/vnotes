@@ -74,6 +74,7 @@ export default defineComponent({
   props: ['sidebarItems'],
 
   setup (props, ctx) {
+    
     const instance = getCurrentInstance().proxy
 
     const { sidebarItems } = toRefs(props)
@@ -178,6 +179,8 @@ export default defineComponent({
       editLinkText,
       pageStyle
     }
+
+   
   }
 })
 
@@ -267,14 +270,14 @@ function flatten (items, res) {
   .theme-reco-content h2
     position relative
     padding-left 0.8rem
-    // &::before
-    //   position: absolute;
-    //   left: 0;
-    //   top: 0;
-    //   display: block;
-    //   height: 100%;
-    //   content: '';
-    //   border-left: 5px solid #3eaf7c;
+    &::before
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      content: '';
+      border-left: 5px solid #3eaf7c;
   // .caidan 
   //   position: fixed;
   //   right: 1rem;

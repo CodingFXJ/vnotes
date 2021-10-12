@@ -251,7 +251,7 @@
  /* 定义两端按钮的样式*/
  
  ::-webkit-scrollbar-button {
-     background-color: #46cb8f !important;
+     /* background-color: #46cb8f !important; */
  }
  /*定义右下角汇合处的样式*/
  

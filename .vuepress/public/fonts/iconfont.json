@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1090",
+      "name": "图书",
+      "font_class": "tushu",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "975592",
+      "name": "成功",
+      "font_class": "chenggong1",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "3640170",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
       "icon_id": "4936984",
       "name": "QQ",
       "font_class": "QQ",

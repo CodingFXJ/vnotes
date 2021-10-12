@@ -146,20 +146,41 @@ export default defineComponent({
       border-top 6px solid var(--text-color-sub)
       border-bottom 0
     .nav-dropdown
-      display none
       // Avoid height shaked by clicking
-      height auto !important
-      box-sizing border-box;
-      max-height calc(100vh - 2.7rem)
-      overflow-y auto
-      position absolute
-      top 100%
-      right 0
-      background-color var(--background-color)
-      padding 0.6rem 0
+      // height auto !important
+      // box-sizing border-box;
+      // max-height calc(100vh - 2.7rem)
+      // overflow-y auto
+      // position absolute
+      // top 100%
+      // right 0
+      // background-color var(--background-color)
+      // padding 0.6rem 0
+      // box-shadow: var(--box-shadow);
+      // text-align left
+      // border-radius $borderRadius
+      // white-space nowrap
+      // margin 0
+      display: none;
+      height: auto !important;
+      box-sizing: border-box;
+      max-height: calc(100vh - 2.7rem);
+      overflow-y: auto;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      transform: translateX(33%);
+      background-color: var(--background-color);
+      padding: 0.6rem 0;
       box-shadow: var(--box-shadow);
-      text-align left
-      border-radius $borderRadius
-      white-space nowrap
-      margin 0
+      text-align: left;
+      border-radius: 0.25rem;
+      white-space: nowrap;
+      margin: 0;
+// .nav-item
+//   &:nth-of-type(2)
+//     .dropdown-wrapper
+//       .nav-dropdown
+//          transform: translateX(0);    
+
 </style>

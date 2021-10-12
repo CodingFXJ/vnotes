@@ -3,7 +3,8 @@ title: npm学习笔记
 date: 2021-09-23 13:26:00
 tags:
  - NPM
-categories: 前端
+categories: 
+ - 前端基础
 ---
 [[toc]]
 ## 一、npm介绍

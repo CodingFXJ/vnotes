@@ -37,6 +37,16 @@ module.exports = {
             },
 
             {
+                "text": '文档',
+                "icon": 'iconfont icon-wodeshequ',
+                "items": [
+                    { "text": '创造狮', "link": 'http://chuangzaoshi.com/' },
+                    { "text": '印记中文', "link": 'https://docschina.org/' },
+                    { "text": '搜图导航', "link": 'https://www.91sotu.com/' },
+
+                ]
+            },
+            {
                 "text": '社区',
                 "icon": 'iconfont icon-wodeshequ',
                 "items": [
