@@ -102,9 +102,18 @@ export default defineComponent({
     const lastUpdated = computed(() => {
 
       if (instance.$themeConfig.lastUpdated === false) return false
-      let timeArr = instance.$page.lastUpdated.split(',');
-      let formatTime = timeArr[0].split('/').reverse().join("-")+"\xa0"+timeArr[1]
-      return formatTime
+      
+      
+      if (instance.$page.lastUpdated) {
+         var timeArr = instance.$page.lastUpdated.split(',');
+          if(timeArr[0]){
+           var formatTime = timeArr[0].split('/')
+           var dateString  = formatTime[2]+"-"+formatTime[0]+"-"+formatTime[1]+"\xa0"+timeArr[1]
+         }
+      }
+     
+      return dateString
+      // return instance.$page.lastUpdated
     })
 
     const lastUpdatedText = computed(() => {
