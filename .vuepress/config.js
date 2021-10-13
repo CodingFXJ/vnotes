@@ -25,6 +25,7 @@ module.exports = {
     ],
     "theme": "reco",
     "themeConfig": {
+        "smoothScroll": true,
         "mode": "light",
         "valineConfig": {
             "appId": 'WrCISMBrRuK0wCX8W0jqmcRF-gzGzoHsz',
@@ -146,6 +147,10 @@ module.exports = {
             {
                 "title": "月上秦少",
                 "link": "https://docs.zkkysqs.top/"
+            },
+            {
+                "title": "青春永不落幕",
+                "link": "https://qcyblm.gitee.io/vuepress/"
             },
         ],
         // "logo": "/logo.png",
