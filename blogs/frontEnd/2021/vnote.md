@@ -1,8 +1,8 @@
 ---
-title: Vuepress踩坑记录
+title: VuePress踩坑记录
 date: 2021-10-10
 tags:
- - Vuepress
+ - VuePress
 categories: 
  - 踩坑积累
 ---
@@ -63,6 +63,6 @@ categories:
 :::
 
 ::: tip 领悟
-来到了新的阵地Vuepress折腾，学到了码农必备技能------备份
+来到了新的阵地VuePress折腾，学到了码农必备技能------备份
 :::
 

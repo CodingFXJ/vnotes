@@ -145,7 +145,14 @@ export default defineComponent({
     }
     const toggleSidebar = (to) => {
       isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
-    }
+      // 获取侧边栏菜单按钮
+      var sidebtn = document.querySelector('.sidebar-button')
+          if(isSidebarOpen.value){
+                sidebtn.classList.add('open')
+              }else{
+                sidebtn.classList.remove('open')
+          }
+     }
     const handleLoading = () => {
       const time = instance.$frontmatter.home && sessionStorage.getItem('firstLoad') == undefined ? 1000 : 0
       setTimeout(() => {

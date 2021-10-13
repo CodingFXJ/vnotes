@@ -1,15 +1,15 @@
 ---
-title: Vuepress自动化部署
+title: VuePress自动化部署
 date: 2021-10-12
 tags:
- - Vuepress
+ - VuePress
 categories: 
  - 前端框架
 ---
 
 
 
-## Vuepress自动化部署及备份源码脚本
+## VuePress自动化部署及备份源码脚本
 
 
 
