@@ -45,6 +45,6 @@ git commit -m 'vnotes-src'
 echo -e "\n========暂存区内容添加到本地仓库完毕！=========\n"
 
 echo -e "\n=========开始强制推送博客源码=========\n"
-git push -f origin master
+git push -f git@gitee.com:GiteeFXJ/vnotes.git origin master
 echo -e "\n=========博客源码推送完毕！=========\n"
 # test github action
