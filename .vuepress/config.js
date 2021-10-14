@@ -168,8 +168,8 @@ module.exports = {
 
         ["vuepress-plugin-auto-sidebar"],
         ["vuepress-plugin-nuggets-style-copy", {
-            // copyText: "复制",
-            copyText: "",
+            copyText: "复制",
+            // copyText: "",
             tip: {
                 content: "复制成功!"
             }

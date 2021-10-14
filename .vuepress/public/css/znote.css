@@ -126,8 +126,8 @@
  }
  
  div[class][class*="language-"]::before {
-     /* right: 50px !important; */
-     right: 36px !important;
+     right: 50px !important;
+     /* right: 36px !important; */
  }
  /* 头像 */
  
