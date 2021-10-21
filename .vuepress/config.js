@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     "title": "Vnotes",
     "description": "Wait a minute...",
@@ -167,13 +169,13 @@ module.exports = {
     plugins: [
 
         ["vuepress-plugin-auto-sidebar"],
-        ["vuepress-plugin-nuggets-style-copy", {
-            // copyText: "复制",
-            copyText: "",
-            tip: {
-                content: "复制成功!"
-            }
-        }],
+        // ["vuepress-plugin-nuggets-style-copy", {
+        //     // copyText: "复制",
+        //     copyText: "",
+        //     tip: {
+        //         content: "复制成功!"
+        //     }
+        // }],
         ['@vuepress/medium-zoom', {
             selector: '.content__default>img',
             options: {
@@ -221,6 +223,7 @@ module.exports = {
         }],
         ['@vuepress-reco/vuepress-plugin-rss', {
             site_url: 'https://giteefxj.gitee.io/vnotes'
-        }]
+        }],
+        [path.resolve(__dirname, './plugins/vuepress-plugin-nuggets-style-copy/index.js')],
     ],
 }

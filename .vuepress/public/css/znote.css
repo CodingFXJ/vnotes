@@ -124,11 +124,6 @@
  .back-to-ceiling {
      z-index: 99999;
  }
- 
- div[class][class*="language-"]::before {
-     right: 50px !important;
-     /* right: 36px !important; */
- }
  /* 头像 */
  
  .personal-info-wrapper .personal-img {
