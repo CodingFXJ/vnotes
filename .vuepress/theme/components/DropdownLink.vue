@@ -146,21 +146,6 @@ export default defineComponent({
       border-top 6px solid var(--text-color-sub)
       border-bottom 0
     .nav-dropdown
-      // Avoid height shaked by clicking
-      // height auto !important
-      // box-sizing border-box;
-      // max-height calc(100vh - 2.7rem)
-      // overflow-y auto
-      // position absolute
-      // top 100%
-      // right 0
-      // background-color var(--background-color)
-      // padding 0.6rem 0
-      // box-shadow: var(--box-shadow);
-      // text-align left
-      // border-radius $borderRadius
-      // white-space nowrap
-      // margin 0
       display: none;
       height: auto !important;
       box-sizing: border-box;
@@ -169,7 +154,7 @@ export default defineComponent({
       position: absolute;
       top: 100%;
       right: 0;
-      transform: translateX(33%);
+      transform: translateX(calc(50% - 33.5px))
       background-color: var(--background-color);
       padding: 0.6rem 0;
       box-shadow: var(--box-shadow);

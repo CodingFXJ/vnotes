@@ -141,7 +141,7 @@ export default defineComponent({
       display:inline-block
       width:100%
       height:100%
-      font-weight:550
+      font-weight:600
     .list-style
       position absolute
       left .4rem
