@@ -7,7 +7,7 @@ module.exports = (options = {}) => ({
         const {
             selector = 'div[class*="language-"] pre',
                 copyText = '',
-                tip: { time = 3000, content = 'copy success', title = 'Tips' } = {},
+                tip: { time = 3000, content = '复制成功', title = 'Tips' } = {},
                 change,
                 visibleTip = true,
         } = options;

@@ -53,12 +53,12 @@ export default {
 <style scoped>
 .v-notification__group {
   width: 200px;
-  padding: 10px 18px 10px;
+  padding: 10px 20px  8px;
   border-radius: 8px;
   box-sizing: border-box;
   border: 1px solid #ebeef5;
   background-color: #fff;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0  0 12px rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
 }
 
