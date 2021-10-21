@@ -1,42 +1,19 @@
 <template>
   <div class="friend-link-wrapper">
+     
     <div
       class="friend-link-item"
       v-for="(item, index) in dataAddColor"
       :key="index"
-      @mouseenter="showDetail($event)"
-      @mouseleave="hideDetail($event)"
       target="_blank">
-      <span
-        class="list-style"
-        :style="{ 'backgroundColor': item.color }">
-      </span>
+      <a :href="item.link" class="linkto" 
+      :style="{ 'color': item.color }"
+       >
       {{item.title}}
-      <transition name="fade">
-        <div class="popup-window-wrapper">
-          <div
-            class="popup-window"
-            :style="popupWindowStyle"
-            ref="popupWindow">
-            <div class="logo"  >
-              <!-- <img :src="getImgUrl(item)" /> -->
-              <img src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20211008232806.jpg" />
-
-            </div>
-            <div class="info">
-              <div class="title">
-                <h4>{{ item.title }}</h4>
-                <a
-                  class="btn-go"
-                  :style="{ 'backgroundColor': item.color }"
-                  :href="item.link"
-                  target="_blank">GO</a>
-              </div>
-              <p v-if="item.desc">{{ item.desc }}</p>
-            </div>
-          </div>
-        </div>
-      </transition>
+      </a>
+      
+     
+       
     </div>
   </div>
 </template>
@@ -146,17 +123,25 @@ export default defineComponent({
   position relative
   margin 30px 0
   .friend-link-item
-    position relative
-    vertical-align: middle;
-    margin: 4px 6px 10px;
-    padding: 4px 8px 4px 20px;
-    line-height 20px
-    display: inline-block;
-    cursor: default;
-    border-radius: $borderRadius
-    font-size: 13px;
-    box-shadow var(--box-shadow)
-    transition: all .5s
+    position: relative
+    vertical-align: middle
+    margin: 4px 6px 10px
+    padding: 4px 8px 4px 20px
+    padding: 5px 10px
+    line-height: 20px
+    display: inline-block
+    cursor: default
+    border-radius: 0.25rem
+    font-size: 13px
+    box-shadow: var(--box-shadow);
+    transition: all 0.5s
+    &:hover
+       transform:scale(1.1)
+    .linkto
+      display:inline-block
+      width:100%
+      height:100%
+      font-weight:550
     .list-style
       position absolute
       left .4rem
