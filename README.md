@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: Vnotes
-tagline: A simple vuepress blog .
+tagline: 有空就学，学会就用！
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',

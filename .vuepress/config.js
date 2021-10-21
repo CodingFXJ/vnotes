@@ -1,6 +1,6 @@
 module.exports = {
     "title": "Vnotes",
-    "description": "Don't be afraid of having a dream, don't stop when you want to win!",
+    "description": "Wait a minute...",
     "dest": "public",
     "base": "/vnotes/",
     "head": [
