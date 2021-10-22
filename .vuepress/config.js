@@ -225,25 +225,13 @@ module.exports = {
                 }
             }
         ],
-        ['@vuepress/plugin-pwa'],
-		[
-			'@vuepress/plugin-pwa-popup',
-			{
-				locales: {
-					'/': {
-						message: '发现新内容可用',
-						buttonText: '刷新',
-					},
-				},
-			},
-		],
-        // ['@vuepress/pwa', {
-        //     serviceWorker: true,
-        //     updatePopup: {
-        //         message: "发现新内容可用",
-        //         buttonText: "刷新"
-        //     }
-        // }],
+         ['@vuepress/pwa', {
+             serviceWorker: true,
+             updatePopup: {
+                 message: "发现新内容可用",
+                 buttonText: "刷新"
+             }
+         }],
         ['@vuepress-reco/vuepress-plugin-rss', {
             site_url: 'https://giteefxj.gitee.io/vnotes'
         }],
