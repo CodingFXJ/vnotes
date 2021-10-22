@@ -67,7 +67,6 @@
   transition: .5s;
 }
 
-.open { transform: scale(.85); }
 
 .open.larr .navicon   {
       width: 1.8rem;

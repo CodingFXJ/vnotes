@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "15432422",
+      "name": "太阳",
+      "font_class": "taiyang2",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "792344",
+      "name": "moon-b-月亮",
+      "font_class": "moonbyueliang",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "6987126",
+      "name": "brightness-auto",
+      "font_class": "brightness-auto",
+      "unicode": "e97e",
+      "unicode_decimal": 59774
+    },
+    {
       "icon_id": "1090",
       "name": "图书",
       "font_class": "tushu",
@@ -32,6 +53,13 @@
       "font_class": "QQ",
       "unicode": "e882",
       "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "25126387",
+      "name": "plane",
+      "font_class": "my-feiji-copy",
+      "unicode": "eaf2",
+      "unicode_decimal": 60146
     },
     {
       "icon_id": "316143",

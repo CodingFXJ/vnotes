@@ -7,7 +7,7 @@
         :key="index"
         :class="getClass(mode.mode)"
         @click="selectMode(mode.mode)"
-      >{{ mode.title }}</li>
+      ><i :class="mode.icon"></i></li>
     </ul>
   </div>
 </template>
@@ -20,9 +20,9 @@ export default {
   data () {
     return {
       modeOptions: [
-        { mode: 'dark', title: 'dark' },
-        { mode: 'auto', title: 'auto' },
-        { mode: 'light', title: 'light' }
+        { mode: 'dark', icon: 'iconfont icon-moonbyueliang' },
+        { mode: 'auto', icon: 'iconfont icon-brightness-auto' },
+        { mode: 'light', icon:'iconfont icon-taiyang2' }
       ],
       currentMode: 'auto'
     }
@@ -63,7 +63,7 @@ export default {
 <style lang="stylus">
 .mode-options
   background-color var(--background-color)
-  min-width: 125px;
+  min-width: 85px;
   margin: 0;
   padding: 1em;
   box-shadow var(--box-shadow);
@@ -76,6 +76,9 @@ export default {
   .color-mode-options
     display: flex;
     flex-wrap wrap
+    border:1px solid #aaa
+    border-radius: 7px
+    overflow: hidden
     li
       flex: 1;
       text-align: center;
@@ -83,19 +86,20 @@ export default {
       color var(--text-color)
       line-height 18px
       padding 3px 6px
-      border-top 1px solid #666
-      border-bottom 1px solid #666
       background-color var(--background-color)
       cursor pointer
+      &.auto
+        border-left:1px solid #aaa
+        border-right:1px solid #aaa
       &.dark
-        border-radius: $borderRadius 0 0 $borderRadius
-        border-left 1px solid #666
-      &.light
-        border-radius: 0 $borderRadius $borderRadius 0
-        border-right 1px solid #666
+        i
+           font-size: 13px;
+     
       &.active
         background-color: $accentColor;
-        color #fff
-      &:not(.active)
-        border-right 1px solid #666
+        i
+          color: #fff !important
+      i
+        color:#3eaf7c 
+      
 </style>
