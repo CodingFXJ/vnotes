@@ -1,4 +1,3 @@
-// const { path } = require("@vuepress/shared-utils");
 const path = require('path');
 
 module.exports = (options = {}) => ({

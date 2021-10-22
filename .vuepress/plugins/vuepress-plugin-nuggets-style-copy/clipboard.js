@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import ClipboardJS from 'clipboard';
 
 let btn;
 
