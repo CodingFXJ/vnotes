@@ -225,10 +225,7 @@ module.exports = {
                 }
             }
         ],
-        ['@vuepress/plugin-pwa',{
-            serviceWorker: true,
-            updatePopup: true
-        }],
+        ['@vuepress/plugin-pwa'],
 		[
 			'@vuepress/plugin-pwa-popup',
 			{
