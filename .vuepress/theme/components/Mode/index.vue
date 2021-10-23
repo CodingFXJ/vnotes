@@ -3,7 +3,7 @@
 		<a class="color-button" @click.prevent="showMenu = !showMenu">
       <reco-icon icon="reco-color" />
 		</a>
-		<ModuleTransition :transform=" ['translate(-50%, 0)', 'translate(-50%, -10px)']">
+		<ModuleTransition :transform=" ['translate(-50%, 0)', 'translate(-50%, 0px)']">
 			<div v-show="showMenu" class="color-picker-menu">
 				<ModePicker />
 			</div>
@@ -95,7 +95,6 @@ export default {
 	.color-picker {
 		margin-right: 1rem;
 		.color-picker-menu {
-			left: calc(50% - 35px);
 			&::before {
 				left: calc(50% + 35px);
 			}
