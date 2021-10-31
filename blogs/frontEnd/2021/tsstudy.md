@@ -5,13 +5,17 @@ tags:
  - TypeScript
 categories: 
  - 前端基础
+
+rightAnchor: 
+  showDepth: 2
+  expand:
+    trigger: hover
+    clickModeDefaultOpen: true
+  disableGlobalUI: false
 ---
+ 
 
-
-
- [[toc]]
-
-
+<!-- [[toc]] -->
 
 
 

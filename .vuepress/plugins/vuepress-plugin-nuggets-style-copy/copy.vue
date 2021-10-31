@@ -52,7 +52,6 @@ div[class][class*="language-"]::before {
   color: #ced6e0;
   transition: color 0.1s;
   position: absolute;
-  z-index: 3;
   top: 0.8em;
   right: 15px;
   font-size:.8rem;

@@ -7,7 +7,6 @@ categories:
  - 前端基础
 ---
 
-[[toc]]
 
 ## 一、声名Promise并绑定this
 

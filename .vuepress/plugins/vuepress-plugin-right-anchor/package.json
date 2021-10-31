@@ -1,0 +1,55 @@
+{
+  "_from": "vuepress-plugin-right-anchor",
+  "_id": "vuepress-plugin-right-anchor@0.5.5",
+  "_inBundle": false,
+  "_integrity": "sha1-9bixLoyRHlGjID1uQPXTsNMhPRA=",
+  "_location": "/vuepress-plugin-right-anchor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "vuepress-plugin-right-anchor",
+    "name": "vuepress-plugin-right-anchor",
+    "escapedName": "vuepress-plugin-right-anchor",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmmirror.com/vuepress-plugin-right-anchor/download/vuepress-plugin-right-anchor-0.5.5.tgz",
+  "_shasum": "f5b8b12e8c911e51a3203d6e40f5d3b0d3213d10",
+  "_spec": "vuepress-plugin-right-anchor",
+  "_where": "D:\\Blog\\vnotes",
+  "author": {
+    "name": "xuek"
+  },
+  "bugs": {
+    "url": "https://github.com/xuekai-china/vuepress-plugin-right-anchor/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  },
+  "deprecated": false,
+  "description": "Right-anchor plugin for vuepress",
+  "homepage": "https://github.com/xuekai-china/vuepress-plugin-right-anchor#readme",
+  "keywords": [
+    "vuepres",
+    "right",
+    "anchor"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "vuepress-plugin-right-anchor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuekai-china/vuepress-plugin-right-anchor.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.5.5"
+}

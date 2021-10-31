@@ -104,15 +104,15 @@ module.exports = {
             }
 
         ],
-        "sidebar": {
-            "/docs/theme-reco/": [
-                "",
-                "theme",
-                "plugin",
-                "api"
-            ],
-            "sidebarDepth": 3,
-        },
+        // "sidebar": {
+        //     "/docs/theme-reco/": [
+        //         "",
+        //         "theme",
+        //         "plugin",
+        //         "api"
+        //     ],
+        //     "sidebarDepth": 3,
+        // },
         // "sidebar": "auto",
 
         "blogConfig": {
@@ -170,8 +170,12 @@ module.exports = {
         "lineNumbers": true
     },
     plugins: [
-
-        ["vuepress-plugin-auto-sidebar"],
+        ["vuepress-plugin-auto-sidebar", {
+            collapse: {
+                open: true
+            },
+            sidebarDepth: 3,
+        }],
         // ["vuepress-plugin-nuggets-style-copy", {
         //     // copyText: "复制",
         //     copyText: "",
@@ -228,5 +232,22 @@ module.exports = {
             site_url: 'https://giteefxj.gitee.io/vnotes'
         }],
         [path.resolve(__dirname, './plugins/vuepress-plugin-nuggets-style-copy/index.js')],
+        // 目录
+        [path.resolve(__dirname, './plugins/vuepress-plugin-right-anchor'),
+            {
+                showDepth: 3,
+                ignore: [
+                    '/',
+                    '/api/'
+                    // more...
+                ],
+                expand: {
+                    trigger: 'hover',
+                    clickModeDefaultOpen: true
+                },
+                // customClass: 'your-customClass',
+            }
+        ]
+        // ['vuepress-plugin-right-anchor']
     ],
 }

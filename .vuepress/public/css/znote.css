@@ -206,7 +206,8 @@
  }
  
  .custom-block.details:hover {
-     transform: translateY(-4px);
+     /* transform: translateY(-4px); */
+     transform: scale(1.01);
      box-shadow: 0 0 5px #ccc;
  }
  
