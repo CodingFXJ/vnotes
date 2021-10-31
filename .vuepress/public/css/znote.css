@@ -260,3 +260,10 @@
      margin: 0 2px !important;
      font-size: 15px !important;
  }
+ 
+ .custom-block.warning>p,
+ .custom-block.tip>p,
+ .custom-block.danger>p {
+     margin-block-start: 0em;
+     margin-block-end: 0.5em;
+ }
