@@ -17,6 +17,7 @@
     },
     "description": "Welcome to my vuepress blog !",
     "dependencies": {
+        "vuepress-plugin-nuggets-style-copy": "^1.0.3",
         "vuepress-plugin-right-anchor": "^0.5.5"
     }
 }

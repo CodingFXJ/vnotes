@@ -159,19 +159,21 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
     display: flex;
     flex-direction: column;
     margin: 0;
+    
     max-height: 75vh;
     min-width: 140px;
 
     &.is-global {
       position: fixed;
       top: $navbarHeight;
-      right: 0;
       z-index: 1;
-
+      right:0px;
       .ra-menu {
+        margin-right:15px;
         align-items: center;
         border: 1px solid #eee;
-        box-shadow: 0 0 3px #eee;
+        box-shadow: 0 0 5px #ddd;
+        border-radius: 3px;
         background: #fff;
         z-index: 999;
         // min-height: 45vh;
@@ -214,7 +216,6 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
     background-color: $rightAnchorBgColor;
     border-left: 1px solid $borderColor;
     font-size: $rightAnchorFontSize;
-    
     overflow-y: auto;
     max-height: calc(100% - 1.75rem - 0.6rem * 2 + 0.2rem * 2);
     margin: calc(1.75rem + 0.6rem * 2 + 0.2rem * 2) 0 0 0;
@@ -222,6 +223,8 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
     &-item {
       display: block;
       padding: 2px 12px 2px 0;
+      height: 24px;
+      line-height: 24px;
       margin-left: -1px;
       text-decoration: none;
       display: block;
@@ -231,13 +234,14 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
       white-space: nowrap;
       color: $rightAnchorMenuTextColor;
       &.h1 {
-        padding-left: 2px;
+        padding: 2px;
         font-weight: bold;
         font-size: $rightAnchorFontSize + 2px;
         text-align: center;
       }
 
       &.h2 {
+        padding: 2px;
         padding-left: 16px;
         font-weight: bold;
       }

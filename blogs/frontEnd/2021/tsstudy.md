@@ -6,12 +6,7 @@ tags:
 categories: 
  - 前端基础
 
-rightAnchor: 
-  showDepth: 2
-  expand:
-    trigger: hover
-    clickModeDefaultOpen: true
-  disableGlobalUI: false
+
 ---
  
 
@@ -21,7 +16,7 @@ rightAnchor:
 
 ## 基础语法
 
-### 一、基础类型：
+### 一、基础类型
 
 #### JS类型
 
@@ -30,34 +25,34 @@ boolean
 number
 string
 array
-Object	//对象: {}、 function(){}
+object	//对象: {}、 function(){}
 null
-Undefined	//默认情况下null和undefined是所有类型的子类型。可以赋值给其他类型
+undefined	//默认情况下null和undefined是所有类型的子类型。可以赋值给其他类型
 ```
 
 ::: warning
  **object 类型常见用法**
 :::
 
-```tsx
+```typescript
 //1.严格要求
 let b :{name: string ,age: number}
 b = { name:'zhangsan ',age :18}
 ```
 
-```tsx
+```typescript
 //2.可选
 let b :{name: string ,age?: number}
 b = { name:'zhangsna '}
 ```
 
-```tsx
+```typescript
 //3.多个可选
 let b :{name: string ,[porname:string]:string}
 b = { name:'zhangsna ',address:'上海',gender:'男'}
 ```
 
-```tsx
+```typescript
 //4.箭头函数设置函数结构
 let d: (c:number,d:number)=>number
 d = function(n1,n2){
@@ -71,7 +66,7 @@ d = function(n1,n2){
 
 :::
 
-```tsx
+```typescript
 let arr: string[] 	//字符串数组 arr = ['zhansan','lisi']
 let arr1:Array<number>	//数值数组 arr1 = [1,2,3,4,5]
 ```
@@ -82,7 +77,7 @@ let arr1:Array<number>	//数值数组 arr1 = [1,2,3,4,5]
 
 :::
 
-```tsx
+```typescript
 let h: [string ,number]
 h = ['hello', 123]
 ```
@@ -93,7 +88,7 @@ h = ['hello', 123]
 
 :::
 
-```tsx
+```typescript
 enum Color {Red = 1, Green = 2, Blue = 4}
 let c: Color = Color.Green;  //c为2
 Color[2] // Green 枚举的值得到它的名字
@@ -103,7 +98,7 @@ Color[2] // Green 枚举的值得到它的名字
 
 #### TS新增类型
 
-``` tsx
+``` typescript
 字面量	  //限制类型在几个值之间（联合类型）例：let b : 'male'|'amale' 、 
 enum	//枚举类型
 tuple	//元组 [string, number];
@@ -122,13 +117,13 @@ never	//永远不返回结果，没有类型是never的子类型、没有类型�
 
 #### 
 
-```tsx
+```typescript
 let a: any
 let b: string 
 b =  a // OK  any类型可以赋值任意类型
 ```
 
-```tsx
+```typescript
 let e: unknown
 e = 'TypeScript'
 let f: string
@@ -149,7 +144,7 @@ f = <string> e
 
 :::
 
-```tsx
+```typescript
 let g: string | boolean
 g = 'sdfj'
 g = true
@@ -166,7 +161,7 @@ f = {
 
 ### 二、类型声名
 
-```tsx
+```typescript
 let name:string	 //声名string类型变量
 let age = 19	 //类型声名可省略，会自动类型推断，age推断为number
 ```
@@ -175,7 +170,7 @@ let age = 19	 //类型声名可省略，会自动类型推断，age推断为numb
 
 ### 三、as const 断言
 
-```tsx
+```typescript
 let a = 99 as const 	//a值只能为99,指定明确的值、类型
 let b:string = 'asfghj'
 let obj = {
@@ -185,7 +180,7 @@ let obj = {
 
 
 
-```tsx
+```typescript
 let x = 1024
 let y = '2048'
 
@@ -198,7 +193,7 @@ let arr = [x,y] as const 	// 指定为元组，arr[1]类型只能为 number
 
 ### 一、类
 
-```tsx
+```typescript
 class 类名 {
     属性名: 类型;
     
@@ -216,7 +211,7 @@ class 类名 {
 
 **栗子:**
 
-```tsx
+```typescript
     class Person{
         name: string;
         age: number;
@@ -236,7 +231,7 @@ class 类名 {
 
 > **注1：在TS中只能有一个构造器方法！**
 
-```tsx
+```typescript
 class Person{
     name: string;
     age: number
@@ -253,7 +248,7 @@ class Person{
 
 #### 
 
-```tsx
+```typescript
 class A {
     protected num: number;
     constructor(num: number) {
@@ -291,7 +286,7 @@ class X extends A {
 
 ::: details public
 
-```tsx
+```typescript
 class Person{
     public name: string; // 写或什么都不写都是public
     public age: number;
@@ -324,7 +319,7 @@ p.name = '猪八戒';// 可以通过对象修改
 
 ::: details protected
 
-```tsx
+```typescript
 class Person{
     protected name: string;
     protected age: number;
@@ -360,7 +355,7 @@ p.name = '猪八戒';// 不能修改
 
 ::: details private
 
-```tsx
+```typescript
 class Person{
     private name: string;
     private age: number;
@@ -404,7 +399,7 @@ p.name = '猪八戒';// 不能修改
 
 ::: details 示例
 
-```tsx
+```typescript
 class Person{
     private _name: string;
 
@@ -442,7 +437,7 @@ p1.name = '猪八戒';
 >
 > 静态属性（方法）使用static开头
 
-```tsx
+```typescript
 class Tools{
     static PI = 3.1415926;
     
@@ -460,7 +455,7 @@ console.log(Tools.sum(123, 456));
 
 > 通过继承可以将其他类中的属性和方法引入到当前类中，通过继承可以在不修改类的情况下完成对类的扩展
 
-```tsx
+```typescript
 class Animal{
     name: string;
     age: number;
@@ -487,7 +482,7 @@ dog.bark();
 
 > 发生继承时，如果子类中的方法会替换掉父类中的同名方法，这就称为方法的重写
 
-```tsx
+```typescript
 class Animal{
     name: string;
     age: number;
@@ -524,7 +519,7 @@ dog.bark();
 >
 > 使用abstract开头的方法叫做抽象方法，抽象方法没有方法体只能定义在抽象类中，继承抽象类时抽象方法必须要实现;
 
-```tsx
+```typescript
 abstract class Animal{
   abstract run(): void;
   bark(){
@@ -544,7 +539,7 @@ class Dog extends Animals{
 
 ### 六、接口
 
-```tsx
+```typescript
 //用于类型检查
 interface Person {
     firstName: string;
@@ -793,7 +788,7 @@ npm i -D webpack webpack-cli webpack-dev-server typescript ts-loader clean-webpa
 
 #### 5 .修改package.json配置
 
-```tsx {6}
+```typescript {6}
 {
    ...
    "scripts": {

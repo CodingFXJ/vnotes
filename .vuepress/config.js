@@ -231,7 +231,12 @@ module.exports = {
         ['@vuepress-reco/vuepress-plugin-rss', {
             site_url: 'https://giteefxj.gitee.io/vnotes'
         }],
-        [path.resolve(__dirname, './plugins/vuepress-plugin-nuggets-style-copy/index.js')],
+        ["vuepress-plugin-nuggets-style-copy", {
+            copyText: "复制",
+            tip: {
+                content: "复制成功!"
+            }
+        }],
         // 目录
         [path.resolve(__dirname, './plugins/vuepress-plugin-right-anchor'),
             {
@@ -245,9 +250,9 @@ module.exports = {
                     trigger: 'hover',
                     clickModeDefaultOpen: true
                 },
-                // customClass: 'your-customClass',
+
             }
-        ]
-        // ['vuepress-plugin-right-anchor']
+        ],
+
     ],
 }

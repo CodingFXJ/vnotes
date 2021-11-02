@@ -174,10 +174,6 @@
      background-color: #d4d4d452 !important;
  }
  
- .custom-block.warning {
-     background-color: #ffa16d47 !important;
- }
- 
  .custom-block.danger {
      background-color: #f9b4b457 !important;
  }
@@ -206,9 +202,7 @@
  }
  
  .custom-block.details:hover {
-     /* transform: translateY(-4px); */
-     transform: scale(1.01);
-     box-shadow: 0 0 5px #ccc;
+     box-shadow: 0 0 8px #ccc;
  }
  
  #valine .vwrap .vheader .vinput {
@@ -267,4 +261,49 @@
  .custom-block.danger>p {
      margin-block-start: 0em;
      margin-block-end: 0.5em;
+ }
+ 
+ .custom-block.warning {
+     background-color: rgba(255, 229, 100, .2) !important;
+     border-color: #e7c000 !important;
+     color: #6b5900 !important;
+ }
+ 
+ .custom-block.tip {
+     background-color: #f3f5f7 !important;
+ }
+ 
+ div[class][class*="language-"]::before {
+     right: 50px !important;
+ }
+ 
+ .v-notification__group {
+     width: 200px !important;
+     padding: 10px 20px 8px !important;
+     border-radius: 8px !important;
+     box-sizing: border-box !important;
+     border: 1px solid #ebeef5 !important;
+     background-color: #fff !important;
+     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15) !important;
+     margin-bottom: 1rem !important;
+     /* margin-right: 5rem !important; */
+ }
+ 
+ .v-notification__title {
+     font-weight: 700 !important;
+     font-size: 16px !important;
+     color: #3ec286 !important;
+     /* color: #303133; */
+     margin: 0;
+     border: none;
+ }
+ 
+ .alert-list {
+     display: flex !important;
+     flex-direction: column !important;
+     position: fixed !important;
+     top: 4rem !important;
+     right: 3.75rem !important;
+     overflow: hidden !important;
+     z-index: 100 !important;
  }
