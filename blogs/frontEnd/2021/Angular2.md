@@ -235,6 +235,269 @@ export class DecrComponent {
 
 
 
+
+
+## 结构型指令
+
+### `*ngIf`指令
+
+```html
+ <p *ngIf="isShow">一段文字 {{ isShow }}</p> 
+<!-- <p *ngIf="isShow as s">一段文字 {{ s }}</p> 局部变量：只能在标签内部使用-->
+isShow:true显示，反之（取决于绑定的值是否为真）
+```
+
+::: warning 
+
+会改变DOM结构，原理：移除和插入DOM节点
+
+:::
+
+::: details *ngIf  完整写法
+
+```html
+ <ng-template [ngIf]="isShow" let-s>
+     <p *ngIf="isShow">一段文字 {{ isShow }} {{s}}</p> 
+ </ng-template>
+```
+
+
+
+:::
+
+**ngIfElese**
+
+```typescript
+import {Component} from '@angular/core';
+@Component({
+  selector: 'app-if',
+  template: `
+    <div *ngIf="condition; else elseBlock">condition为真时显示</div>
+
+    <ng-template #elseBlock> 
+      <p> condition为假时显示 </p>
+    </ng-template>
+  `,
+}) // #elseBlock:模板的引用
+export class IfComp {
+  condition = true;
+}
+```
+
+**ngIfThen**
+
+```typescript
+import {Component} from '@angular/core';
+@Component({
+  selector: 'app-if',
+  template: `
+    <div *ngIf="condition; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock> condition为true时显示</ng-template>
+    <ng-template #elseBlock> condition为false时显示</ng-template>
+  `,
+})//只会显示一个ng-template，第一个div只是用于承载，并不会显示
+export class IfComp {
+  condition = true;
+}
+```
+
+::: details    TemplateRef拓展
+
+```typescript
+import {Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, AfterViewInit} from '@angular/core';
+@Component({
+  selector: 'app-if',
+  template: `
+    <button(click)="condition = !condition">toggle block</button>
+    <p *ngIf="condition else elseBlocks">{{ condition }} === true 时显示</p>
+    
+	<ng-template #firstTpl>
+      <p>{{ condition }} === false 时显示</p>
+    </ng-template>
+  `,
+})
+export class IfComponent implements OnInit, AfterViewInit {
+  elseBlocks: TemplateRef<any> = null; //获取组件的变量elseBlocks
+  @ViewChild('firstTpl', {static: true}) primaryBlock: TemplateRef<any> = null;
+  condition = false;
+  constructor() {
+
+  }
+  ngOnInit(): void {
+    console.log('ngOnInit', this.primaryBlock);
+    this.elseBlocks = this.primaryBlock;
+   //获取到#firstTpl模板引用赋值给elseBlocks变量
+  }
+}
+//运行效果和ngIfElese案例一样
+```
+
+:::
+
+### `*ngFor`指令
+
+```typescript
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-for',
+  template: `
+    <ul>
+      <li *ngFor="let item of Persons; 
+			index as i; count as len; let ev = even; let od = odd; let f = first; let l = last;
+			trackBy: trackByPerson">{{ item.name }}</li>
+    </ul>
+  `,
+})
+export class ForComponent {
+     Persons = [
+  {
+    id: 'p1',
+    name: '张三'
+  },
+    {
+    id: 'p2',
+    name: '李四'
+  },
+    {
+    id: 'p3',
+    name: '王五'
+  },
+  
+];
+trackByPerson(index,item){
+    return item.id	//追踪id，id值不变不刷新（提升性能）
+  }
+}
+```
+
+::: details ngFor局部变量
+
+```js
+ index: number	//可迭代对象中当前条目的索引。
+ count: number	//可迭代对象的长度。
+ first: boolean	//如果当前条目是可迭代对象中的第一个条目则为 true。
+ last: boolean	//如果当前条目是可迭代对象中的最后一个条目则为 true。
+ even: boolean	//如果当前条目在可迭代对象中的索引号为偶数则为 true。
+ odd: boolean	//如果当前条目在可迭代对象中的索引号为奇数则为 true。
+ $implicit: T	//迭代目标（绑定到ngForOf）中每个条目的值。
+ ngForOf: NgIterable<T>	//迭代表达式的值。当表达式不局限于访问某个属性时，这会非常有用，比如在使用 async 管道时（userStreams | async）。
+```
+
+
+
+:::
+
+
+
+::: details  *ngFor展开写法
+
+```html
+ <ul>
+     <ng-template
+       ngFor
+       [ngForOf]="heros"
+       [ngForTrackBy]="trackByHero"
+       let-item
+       let-i="index"
+       let-od="odd"
+       let-ev="even"
+       let-len="count"
+       let-f="first"
+       let-l="last">
+       <li [class.even]="ev" [class.odd]="od">
+         <p>index: {{ i }}</p>
+         <p>count: {{ len }}</p>
+         <p>name: {{ item.name }}</p>
+         <p>first: {{ f }} -- last: {{ l }}</p>
+         <hr>
+       </li>
+     </ng-template>
+   </ul>
+```
+
+
+
+:::
+
+
+
+### `[ngSwitch]`指令
+
+::: warning 
+
+`[ngSwitch]` 为属性型指令
+
+`*ngSwitchCase`为结构型指令
+
+:::
+
+```typescript
+import {Component} from '@angular/core';
+@Component({
+  selector: 'app-switch',
+  template: `
+    <p>
+      <input type="radio" name="fruit" value="apple" id="apple" [(ngModel)]="fruit" />
+      <label for="apple">🍎</label>
+    </p>
+    <p>
+      <input type="radio" name="fruit" value="pear" id="pear" [(ngModel)]="fruit" />
+      <label for="pear">🍐</label>
+    </p>
+    <p>
+      <input type="radio" name="fruit" value="grape" id="grape" [(ngModel)]="fruit" />
+      <label for="grape">🍇</label>
+    </p>
+    <p>
+      <input type="radio" name="fruit" value="other" id="other" [(ngModel)]="fruit" />
+      <label for="other">other</label>
+    </p>
+    
+    selected fruit: {{ fruit }}
+    
+    <div class="content" [ngSwitch]="fruit">
+      <p *ngSwitchCase="'apple'">这是 苹果</p>
+      <p *ngSwitchCase="'pear'"> 这是 梨</p>
+      <p *ngSwitchCase="'grape'">这是 葡萄</p>
+      <p *ngSwitchDefault>啥都不是</p>
+    </div>
+  `,
+})
+export class SwitchComponent {
+  fruit = '';
+}
+```
+
+::: details [ngSwitch]展开写法
+
+```typescript
+ <div class="content" [ngSwitch]="fruit">
+       <ng-template ngSwitchCase="apple">
+         <p>这是苹果</p>
+       </ng-template>
+       <ng-template ngSwitchCase="pear">
+         <p>这是梨</p>
+       </ng-template>
+       <ng-template ngSwitchCase="grape">
+         <p>这是葡萄</p>
+       </ng-template>
+       <ng-template ngSwitchDefault>
+         <p>啥都不是</p>
+       </ng-template>
+     </div>
+```
+
+
+
+:::
+
+
+
+
+
+
+
 ## 自定义指令
 
 使用：
@@ -362,260 +625,7 @@ export class AppComponent {
 
 :::
 
-## 结构型指令
-
-### `*ngIf`指令
-
-```html
- <p *ngIf="isShow">一段文字 {{ isShow }}</p> 
-<!-- <p *ngIf="isShow as s">一段文字 {{ s }}</p> 局部变量：只能在标签内部使用-->
-isShow:true显示，反之（取决于绑定的值是否为真）
-```
-
-::: warning 
-
-会改变DOM结构，原理：移除和插入DOM节点
-
-:::
-
-::: details *ngIf  完整写法
-
-```html
- <ng-template [ngIf]="isShow" let-s>
-     <p *ngIf="isShow">一段文字 {{ isShow }} {{s}}</p> 
- </ng-template>
-```
-
-
-
-:::
-
-**ngIfElese**
-
-```typescript
-import {Component} from '@angular/core';
-@Component({
-  selector: 'app-if',
-  template: `
-    <div *ngIf="condition; else elseBlock">condition为真时显示</div>
-
-    <ng-template #elseBlock> 
-      <p> condition为假时显示 </p>
-    </ng-template>
-  `,
-}) // #elseBlock:模板的引用
-export class IfComp {
-  condition = true;
-}
-```
-
-**ngIfThen**
-
-```typescript
-import {Component} from '@angular/core';
-@Component({
-  selector: 'app-if',
-  template: `
-    <div *ngIf="condition; then thenBlock else elseBlock"></div>
-    <ng-template #thenBlock> condition为true时显示</ng-template>
-    <ng-template #elseBlock> condition为false时显示</ng-template>
-  `,
-})//只会显示一个ng-template，第一个div只是用于承载，并不会显示
-export class IfComp {
-  condition = true;
-}
-```
-
-::: details    TemplateRef拓展
-
-```typescript
-import {Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, AfterViewInit} from '@angular/core';
-@Component({
-  selector: 'app-if',
-  template: `
-    <button(click)="condition = !condition">toggle block</button>
-    <p *ngIf="condition else elseBlocks">{{ condition }} === true 时显示</p>
-    
-	<ng-template #firstTpl>
-      <p>{{ condition }} === false 时显示</p>
-    </ng-template>
-  `,
-})
-export class IfComponent implements OnInit, AfterViewInit {
-  elseBlocks: TemplateRef<any> = null; //获取组件的变量elseBlocks
-  @ViewChild('firstTpl', {static: true}) primaryBlock: TemplateRef<any> = null;
-  condition = false;
-  constructor() {
-
-  }
-  ngOnInit(): void {
-    console.log('ngOnInit', this.primaryBlock);
-    this.elseBlocks = this.primaryBlock;
-   //获取到#firstTpl模板引用赋值给elseBlocks变量
-  }
-}
-//运行效果和ngIfElese案例一样
-```
-
-:::
-
-### `[ngSwitch]`指令
-
-::: warning 
-
-`[ngSwitch]` 为属性型指令
-
-`*ngSwitchCase`为结构型指令
-
-:::
-
-```typescript
-import {Component} from '@angular/core';
-@Component({
-  selector: 'app-switch',
-  template: `
-    <p>
-      <input type="radio" name="fruit" value="apple" id="apple" [(ngModel)]="fruit" />
-      <label for="apple">🍎</label>
-    </p>
-    <p>
-      <input type="radio" name="fruit" value="pear" id="pear" [(ngModel)]="fruit" />
-      <label for="pear">🍐</label>
-    </p>
-    <p>
-      <input type="radio" name="fruit" value="grape" id="grape" [(ngModel)]="fruit" />
-      <label for="grape">🍇</label>
-    </p>
-    <p>
-      <input type="radio" name="fruit" value="other" id="other" [(ngModel)]="fruit" />
-      <label for="other">other</label>
-    </p>
-    
-    selected fruit: {{ fruit }}
-    
-    <div class="content" [ngSwitch]="fruit">
-      <p *ngSwitchCase="'apple'">这是 苹果</p>
-      <p *ngSwitchCase="'pear'"> 这是 梨</p>
-      <p *ngSwitchCase="'grape'">这是 葡萄</p>
-      <p *ngSwitchDefault>啥都不是</p>
-    </div>
-  `,
-})
-export class SwitchComponent {
-  fruit = '';
-}
-```
-
-::: details [ngSwitch]展开写法
-
-```typescript
- <div class="content" [ngSwitch]="fruit">
-       <ng-template ngSwitchCase="apple">
-         <p>这是苹果</p>
-       </ng-template>
-       <ng-template ngSwitchCase="pear">
-         <p>这是梨</p>
-       </ng-template>
-       <ng-template ngSwitchCase="grape">
-         <p>这是葡萄</p>
-       </ng-template>
-       <ng-template ngSwitchDefault>
-         <p>啥都不是</p>
-       </ng-template>
-     </div>
-```
-
-
-
-:::
-
-
-
-### `*ngFor`指令
-
-```typescript
-import {Component} from '@angular/core';
-
-@Component({
-  selector: 'app-for',
-  template: `
-    <ul>
-      <li *ngFor="let item of Persons; 
-			index as i; count as len; let ev = even; let od = odd; let f = first; let l = last;
-			trackBy: trackByPerson">{{ item.name }}</li>
-    </ul>
-  `,
-})
-export class ForComponent {
-     Persons = [
-  {
-    id: 'p1',
-    name: '张三'
-  },
-    {
-    id: 'p2',
-    name: '李四'
-  },
-    {
-    id: 'p3',
-    name: '王五'
-  },
-  
-];
-trackByPerson(index,item){
-    return item.id	//追踪id，id值不变不刷新（提升性能）
-  }
-}
-```
-
-::: details ngFor局部变量
-
-```js
- index: number	//可迭代对象中当前条目的索引。
- count: number	//可迭代对象的长度。
- first: boolean	//如果当前条目是可迭代对象中的第一个条目则为 true。
- last: boolean	//如果当前条目是可迭代对象中的最后一个条目则为 true。
- even: boolean	//如果当前条目在可迭代对象中的索引号为偶数则为 true。
- odd: boolean	//如果当前条目在可迭代对象中的索引号为奇数则为 true。
- $implicit: T	//迭代目标（绑定到ngForOf）中每个条目的值。
- ngForOf: NgIterable<T>	//迭代表达式的值。当表达式不局限于访问某个属性时，这会非常有用，比如在使用 async 管道时（userStreams | async）。
-```
-
-
-
-:::
-
-
-
-::: details  *ngFor展开写法
-
-```html
- <ul>
-     <ng-template
-       ngFor
-       [ngForOf]="heros"
-       [ngForTrackBy]="trackByHero"
-       let-item
-       let-i="index"
-       let-od="odd"
-       let-ev="even"
-       let-len="count"
-       let-f="first"
-       let-l="last">
-       <li [class.even]="ev" [class.odd]="od">
-         <p>index: {{ i }}</p>
-         <p>count: {{ len }}</p>
-         <p>name: {{ item.name }}</p>
-         <p>first: {{ f }} -- last: {{ l }}</p>
-         <hr>
-       </li>
-     </ng-template>
-   </ul>
-```
-
-
-
-:::
+## 模板元素
 
 ### `ng-template`
 
@@ -689,7 +699,9 @@ export class AppComponent {
 }
 ```
 
-### 管道
+## 操作符
+
+### 管道 `|`
 
 ::: warning 
 

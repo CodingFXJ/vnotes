@@ -307,3 +307,9 @@
      overflow: hidden !important;
      z-index: 100 !important;
  }
+ 
+ blockquote {
+     border-left: .25rem solid #49b1f5 !important;
+     background-color: rgba(73, 177, 245, 0.1) !important;
+     margin: 15px 0 !important;
+ }
