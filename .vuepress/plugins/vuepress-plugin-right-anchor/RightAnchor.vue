@@ -193,7 +193,7 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #7F7F7F;
+    color: #3eaf7c;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
     background-color: $rightAnchorBtnBgColor;
     border-radius: 4px;
@@ -205,7 +205,7 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
     }
 
     &:hover {
-      color: $accentColor;
+      color: #49b1f5;
     }
   }
 
