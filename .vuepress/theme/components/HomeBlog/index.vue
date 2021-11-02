@@ -126,7 +126,7 @@ export default defineComponent({
     position relative
     box-sizing border-box
     padding 0 20px
-    height 100vh
+    height 100vh !important
     display flex
     align-items center
     justify-content center
@@ -137,7 +137,7 @@ export default defineComponent({
 
     h1 {
       display: block;
-      margin:0 auto 1.8rem;
+      margin:0 auto 4rem;
       font-size: 2.5rem;
     }
 
@@ -223,14 +223,14 @@ export default defineComponent({
 @media (max-width: $MQMobile) {
   .home-blog {
     .hero {
-      height 450px
+      height 450px !important
       img {
         max-height: 210px;
         margin: 2rem auto 1.2rem;
       }
 
       h1 {
-        margin: 0 auto 1.8rem ;
+        margin: 0 auto 3.2rem ;
         font-size: 2rem;
       }
 
@@ -262,14 +262,14 @@ export default defineComponent({
 @media (max-width: $MQMobileNarrow) {
   .home-blog {
     .hero {
-      height 450px
+      height:450px !important
       img {
         max-height: 210px;
         margin: 2rem auto 1.2rem;
       }
 
       h1 {
-        margin: 0 auto 1.8rem ;
+        margin: 0 auto 3.2rem ;
         font-size: 2rem;
       }
 

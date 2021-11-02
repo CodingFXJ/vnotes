@@ -159,14 +159,14 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
     display: flex;
     flex-direction: column;
     margin: 0;
-    
+    z-index :9999;
     max-height: 75vh;
     min-width: 140px;
 
     &.is-global {
       position: fixed;
       top: $navbarHeight;
-      z-index: 1;
+       z-index :9999;
       right:0px;
       .ra-menu {
         margin-right:15px;

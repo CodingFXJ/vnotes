@@ -508,7 +508,7 @@ export class SwitchComponent {
 <p appHighlight='color'></p> <!-- 起别名后，输入属性和指令名设为一样-->
 ```
 
-### 自定义高亮指令（属性型）：
+### 自定义高亮指令（属性型）
 
 ```typescript
 import {Directive, ElementRef, EventEmitter, HostListener, Input, Output} from '@angular/core';
@@ -570,7 +570,7 @@ export class UnlessDirective implements OnChanges {
   @Input('appUnless') unless: boolean;
   private hasView = false;//是否已显示
   private context = new UnlessContext();
-    
+  
   constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) {
     // console.log(this.templateRef);
     // console.log(this.viewContainer);
