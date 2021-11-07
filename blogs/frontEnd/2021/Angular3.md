@@ -465,7 +465,11 @@ export class AppComponent implements OnInit,OnChanges,DoCheck,AfterContentInit,
 
 #### 默认策略下触发变更检测的时机
 
-` changeDetection:ChangeDetectionStrategy.Default`
+```typescript
+changeDetection:ChangeDetectionStrategy.Default
+```
+
+
 
 - 事件：页面 click、submit、mouse down……
 - XHR：从后端服务器拿到数据
@@ -487,7 +491,11 @@ export class AppComponent implements OnInit,OnChanges,DoCheck,AfterContentInit,
 
 #### onPush下触发变更检测时机
 
-` changeDetection:ChangeDetectionStrategy.OnPush`
+```typescript
+changeDetection:ChangeDetectionStrategy.OnPush
+```
+
+
 
 ::: warning 
 
