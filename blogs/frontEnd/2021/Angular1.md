@@ -1,6 +1,6 @@
 ---
 title: Angular基础总结（一）
-date: 2021-10-23 13:26:00
+date: 2021-10-27 13:26:00
 tags:
  - Angular
 categories: 
@@ -376,3 +376,50 @@ export class MycpnComponent  {
 
 > 还可以元数据中声名输入、输出属性。[（不推荐）](https://angular.cn/guide/styleguide#decorate-input-and-output-properties)
 
+## 三、组件样式
+
+### 宿主选择器
+
+>  `:host`选择是是把宿主元素作为目标的唯一方式
+
+```md
+它选中的是组件模板标签，比如<app-child></app-child>，相当于在父组件的style中使用标签选择器选择 app-child {}
+```
+
+当宿主标签上有 active class时生效
+
+```css
+:host(.active) {
+  border-width: 3px solid #ccc;
+}
+```
+
+
+
+### 祖先选择器
+
+> 当某个祖先元素有 CSS 类 light 时，才会把 background-color 样式应用到组件内部的所有 .title 元素中，找到根元素(html标签)为止
+
+```css
+:host-context(.light) .title {
+ 	 background-color: #bfa;
+}
+```
+
+
+
+### 样式模块化
+
+> 在 @Component 的元数据中指定的样式只会对该组件的模板生效
+>
+> 组件的样式不会影响到子组件中的模板
+>
+> 组件的样式不会影响到投影内容
+
+### 视图封装模式
+
+> ShadowDom -- **不进不出**，没有样式能进来，组件样式出不去, 就自己玩
+>
+> Emulated  --**只进不出**， 默认选项，全局样式能进来，组件样式出不去
+>
+> None  -- **能进能出**，此时组件的样式是全局生效的，注意与其他组件发生样式冲突，（对父组件样式也能生效）

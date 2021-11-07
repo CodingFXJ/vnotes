@@ -1,12 +1,11 @@
 ---
 title: Angular基础总结（二）
-date: 2021-10-23 13:26:00
+date: 2021-10-29 13:26:00
 tags:
  - Angular
 categories: 
  - 前端基础
-keys:
- - 'b6cfbdbc196514877b6b2e5984d1e69c'
+
 ---
 
 ## 双向绑定
@@ -234,8 +233,6 @@ export class DecrComponent {
 ```
 
 :::
-
-
 
 
 

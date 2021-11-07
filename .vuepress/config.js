@@ -100,7 +100,7 @@ module.exports = {
                 "text": '酷站',
                 "icon": 'iconfont icon-lianjiedian-connection-points',
                 "items": [
-                    { "text": 'Vnav', "link": 'http://codingfxj.3vhost.net/index.html' },
+                    { "text": 'VNAN', "link": ' https://giteefxj.gitee.io/serverpage' },
                     { "text": '小霸王', "link": 'https://www.yikm.net/' },
                     { "text": 'CyberMap', "link": 'https://cybermap.kaspersky.com/' },
                     { "text": 'weavesilk', "link": 'http://weavesilk.com/' },
