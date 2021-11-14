@@ -1,6 +1,6 @@
 ---
 title: JS高阶函数
-date: 2021-10-10
+date: 2021-10-9
 tags:
  - JavaScript
 categories: 
@@ -84,6 +84,26 @@ console.log( arr1 );
 
 
 ##### 找出素数
+
+```js
+var arr=[1,2,3,4,5,6,7,8,9,11,20,37];
+         var result=arr.filter(function(value,index,arr){
+             if(value==2){
+                 return true;
+            }
+             if(value==1){
+                return false;
+             }
+            for(var i=2;i<Math.sqrt(value)+1;i++){
+                if(value%i==0){
+                     return false;
+                 }
+             }
+             return true;
+         });
+```
+
+
 
 ##  高阶函数之map
 
@@ -344,8 +364,6 @@ console.log(nameNum); //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
 ```
 
 
-
-##### 
 
 ## 高阶函数之 sort
 
