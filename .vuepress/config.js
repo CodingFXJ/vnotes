@@ -196,6 +196,13 @@ module.exports = {
                 margin: 16
             }
         }],
+        ['@vuepress/pwa', {
+            serviceWorker: true,
+            updatePopup: {
+                message: "发现新内容可用",
+                buttonText: "刷新"
+            }
+        }],
         [
             'meting', {
                 // auto: "https://xxxxxxxxxxxx", //你的歌单的链接，网页歌单链接
@@ -204,7 +211,7 @@ module.exports = {
                     fixed: true,
                     server: "netease", //歌单的平台、我这里是QQ音乐的平台
                     type: "playlist",
-                    mid: "7013045772", //链接后面的id
+                    mid: "948344475", //链接后面的id
                 }, // 不配置该项的话不会出现全局播放器
                 aplayer: {
                     autoplay: false,
@@ -228,13 +235,6 @@ module.exports = {
                 }
             }
         ],
-        ['@vuepress/pwa', {
-            serviceWorker: true,
-            updatePopup: {
-                message: "发现新内容可用",
-                buttonText: "刷新"
-            }
-        }],
         ['@vuepress-reco/vuepress-plugin-rss', {
             site_url: 'https://giteefxj.gitee.io/vnotes'
         }],
