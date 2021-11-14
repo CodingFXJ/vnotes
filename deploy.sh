@@ -48,3 +48,4 @@ echo -e "\n=========开始强制推送博客源码=========\n"
 git push -f git@gitee.com:GiteeFXJ/vnotes.git 
 echo -e "\n=========博客源码推送完毕！=========\n"
 # test github action
+ 
