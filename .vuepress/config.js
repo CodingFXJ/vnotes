@@ -210,7 +210,7 @@ module.exports = {
                     fixed: true,
                     server: "netease", //歌单的平台、我这里是QQ音乐的平台
                     type: "playlist",
-                    mid: "948344475", //链接后面的id
+                    mid: "7013045772", //链接后面的id
                 }, // 不配置该项的话不会出现全局播放器
                 aplayer: {
                     autoplay: false,
