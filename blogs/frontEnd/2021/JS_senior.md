@@ -1,6 +1,6 @@
 ---
 title: JS高阶函数
-date: 2021-10-9
+date: 2021-10-12
 tags:
  - JavaScript
 categories: 
