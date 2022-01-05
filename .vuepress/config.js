@@ -51,7 +51,7 @@ module.exports = {
 
             {
                 "text": '文档',
-                "icon": 'iconfont icon-wodeshequ',
+                "icon": 'iconfont icon-wenjian',
                 "items": [
                     { "text": '创造狮', "link": 'http://chuangzaoshi.com/' },
                     { "text": '印记中文', "link": 'https://docschina.org/' },

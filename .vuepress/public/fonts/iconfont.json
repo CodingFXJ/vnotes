@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1118",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "26236857",
+      "name": "合作、握手、交流-06",
+      "font_class": "a-hezuowoshoujiaoliu-06",
+      "unicode": "e905",
+      "unicode_decimal": 59653
+    },
+    {
       "icon_id": "15432422",
       "name": "太阳",
       "font_class": "taiyang2",
