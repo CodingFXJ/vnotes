@@ -36,7 +36,9 @@
     <ModuleTransition delay="0.24">
       <div class="page-nav" v-if="recoShowModule && (prev || next)">
         <p class="inner">
+          
           <span v-if="prev" class="prev">
+          <span style="color:#3eaf7c;font-size:16px;font-weight:600;">←</span>
             <router-link v-if="prev" class="prev" :to="prev.path">
               {{ prev.title || prev.path }}
             </router-link>
@@ -45,7 +47,9 @@
             <router-link v-if="next" :to="next.path">
               {{ next.title || next.path }}
             </router-link>
+             <span style="color:#3eaf7c;font-size:16px;font-weight:600;">→</span>
           </span>
+         
         </p>
       </div>
     </ModuleTransition>

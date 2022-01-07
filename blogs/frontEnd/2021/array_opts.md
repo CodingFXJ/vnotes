@@ -1,6 +1,6 @@
 ---
 title: JS常用的求交集/并集/差集的方法
-date: 2021-07-21
+date: 2021-11-21
 tags:
  - 数组处理
 categories: 
@@ -11,12 +11,11 @@ categories:
 
 
 
-<div style="display:flex;justify-content:space-round">
-    <img width="300px" title="交集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20211220214831.png"/>
-    <img width="300px" title="并集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20211220215047.png"/>
-    <img width="300px" title="差集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20211220214745.png"/>
-    <img width="300px" title="补集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20211220215018.png"/>
-</div>
+<div style="display:flex;justify-content:space-around">
+    <img   title="交集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210521.png"/>
+    <img  title="并集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210521.png"/>
+    <img  title="差集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210911.png"/></div>
+
 
 
 
@@ -200,7 +199,12 @@ arr.reduce(function(pre,cur){
 ### 三、差集(A-B)
 
 ```js
-//找出a数组中，b数组没有的对象let res =  a.filter(item=>{            return b.every(item1 =>{              return item.id !== item1.id            })        })
+//找出a数组中，b数组没有的对象
+let res =  a.filter(item=> { 
+    return b.every(item1 =>{ 
+        return item.id !== item1.id 
+    })        
+})
 ```
 
 
@@ -208,7 +212,15 @@ arr.reduce(function(pre,cur){
 ### 四、补集
 
 ```js
-//补集:a中每一项都不在b中//A是S的一个子集，由S中所有不属于A的元素组成的集合，叫做子集A在S中的绝对补集。//购物车一组商品，选中和未选中分为两组,拆单用let test=a.reduce(function(pre,cur){    if(b.every(item=>item.id!==cur.id)){        pre.push({             name:cur.name        })    }    return pre;},[])
+//补集:a中每一项都不在b中
+//A是S的一个子集，由S中所有不属于A的元素组成的集合，叫做子集A在S中的绝对补集。
+//购物车一组商品，选中和未选中分为两组,拆单用
+let test=a.reduce(function(pre,cur){    
+    if(b.every(item=>item.id!==cur.id)){       
+        pre.push({name:cur.name})
+    }    
+    return pre;
+},[])
 ```
 
 

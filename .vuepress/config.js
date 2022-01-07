@@ -137,19 +137,20 @@ module.exports = {
                 "link": "https://codingfxj.github.io/"
             },
             {
-                "title": "vuepress",
-                "link": "https://www.vuepress.cn/"
-            }, {
+                "title": "后盾人",
+                "link": "https://doc.houdunren.com/"
+            },
+            {
+                "title": "木易杨前端进阶",
+                "link": "https://muyiy.cn/"
+            },
+            {
+                "title": "晚风阅览馆",
+                "link": "http://bk.xiat123.cn/"
+            },
+            {
                 "title": "午后南杂",
                 "link": "https://www.recoluan.com"
-            },
-            {
-                "title": "recotheme",
-                "link": "https://vuepress-theme-reco.recoluan.com"
-            },
-            {
-                "title": "znote",
-                "link": "https://zpj80231.github.io/znote/ "
             },
             {
                 "title": "平凡的你我 ",
@@ -160,9 +161,27 @@ module.exports = {
                 "link": "https://docs.zkkysqs.top/"
             },
             {
-                "title": "青春永不落幕",
-                "link": "https://qcyblm.gitee.io/vuepress/"
+                "title": "若川的博客",
+                "link": "https://lxchuan12.gitee.io/"
             },
+            {
+                "title": "左小白",
+                "link": "http://www.zuo11.com/"
+            },
+            {
+                "title": "recotheme",
+                "link": "https://vuepress-theme-reco.recoluan.com"
+            },
+            {
+                "title": "vuepress",
+                "link": "https://www.vuepress.cn/"
+            },
+            {
+                "title": "znote",
+                "link": "https://zpj80231.github.io/znote/ "
+            },
+
+
         ],
         // "logo": "/logo.png",
         "search": true,
