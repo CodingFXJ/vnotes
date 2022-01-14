@@ -9,14 +9,9 @@ categories:
 
 # JS常用的求交集、并集、差集的方法
 
+<img   title="交集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210521.png"/>         <img  title="并集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210521.png"/>
 
-
-<div style="display:flex;justify-content:space-around">
-    <img   title="交集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210521.png"/>
-    <img  title="并集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210521.png"/>
-    <img  title="差集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210911.png"/></div>
-
-
+<img  title="差集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220107210911.png"/>         <img  title="差集" src="https://gitee.com/GiteeFXJ/picstore/raw/master/pics/20220114113515.png"/>
 
 
 
