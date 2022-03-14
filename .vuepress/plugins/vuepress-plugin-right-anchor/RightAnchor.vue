@@ -271,7 +271,7 @@ $rightAnchorMenuTextColor ?= $rightAnchorTextColor;
         color: $accentColor;
         border-left: 2px solid $accentColor;
         padding-left: 22px;
-
+        background-color:#68edb163;
         &.h1 {
           padding-left: 0px;
         }
