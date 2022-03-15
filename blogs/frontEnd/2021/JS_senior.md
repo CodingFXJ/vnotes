@@ -58,14 +58,14 @@ var arr=[1,2,3,4,5,6];
 ##### 数组去重
 
 ```js
-var r,arr= ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
-r=arr.filter(function(value,index,arr){
+var  arr= ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+ var filterArr = arr.filter(function(value,index,arr){
             return arr.indexOf(value)===index;
 //去除重复元素依靠的是indexOf总是返回第一个元素的位置，
 //后续的重复元素位置与indexOf返回的位置相等,表示是同一个元素
 //后续的重复元素位置与indexOf返回的位置不相等，表示元素重复并且过滤。
         })
-console.log(r);//["apple", "strawberry", "banana", "pear", "orange"]
+console.log(filterArr);//["apple", "strawberry", "banana", "pear", "orange"]
 
 ```
 
