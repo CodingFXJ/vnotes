@@ -86,14 +86,16 @@ console.log( arr1 );
 ##### 找出素数
 
 ```js
+//除了1和自身,不能被其他数整除的
 var arr=[1,2,3,4,5,6,7,8,9,11,20,37];
          var result=arr.filter(function(value,index,arr){
-             if(value==2){
-                 return true;
-            }
+           
              if(value==1){
                 return false;
              }
+               if(value==2){
+                 return true;
+            }
             for(var i=2;i<Math.sqrt(value)+1;i++){
                 if(value%i==0){
                      return false;
