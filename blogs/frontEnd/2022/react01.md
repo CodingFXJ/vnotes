@@ -51,8 +51,6 @@ ReactDOM.render(VDOM,document.getElementById('root'))
 
 > 1.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方
 
-> 
-
      (1). a
           (2). a+b
           (3). demo(1)
