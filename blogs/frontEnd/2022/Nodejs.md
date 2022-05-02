@@ -282,7 +282,18 @@ console.log(m1.age); //20
 
 ## 五、模块加载机制
 
+1. 优先从缓存中加载，模块多次require()只会执行一次
 
+2. 内置模块的加载优先级是最高的
+3. 自定义模块require时，必须在路径指定`./或../`开头的路径标识符
+
+![image-20220502220923072](https://vnote-bucket.oss-cn-shanghai.aliyuncs.com/image-20220502220923072.png)4. 第三方模块记载机制
+
+![image-20220502221028461](https://vnote-bucket.oss-cn-shanghai.aliyuncs.com/image-20220502221028461.png)
+
+5. 目录作为模块
+
+   ![image-20220502221133208](https://vnote-bucket.oss-cn-shanghai.aliyuncs.com/image-20220502221133208.png)
 
 ## 六、Express模块
 
@@ -795,7 +806,7 @@ JWT组成部分：Header（头部）、Payload（有效载荷)、Signature（签
 
  **JWT使用**
 
-安装`jsonwebtoken `>、`express-jwt`
+安装`jsonwebtoken `、`express-jwt`
 
 ```js
 const express = require('express')
