@@ -1,22 +1,3 @@
-# name: syncToGitee
-# on:
-#   push:
-#     branches:
-#       - gh-pages
-# jobs:
-#   repo-sync:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: 'Mirror the Github organization repos to Gitee'
-#         uses: Yikun/hub-mirror-action@master
-#         with:
-#           src: 'github/CoderFXJ'
-#           dst: 'gitee/CoderFXJ'
-#           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-#           dst_token:  ${{ secrets.GITEE_TOKEN }}
-#           static_list: "learn-typescript"
-#           force_update: true
-#        debug: true
 name: syncToGitee
 on:
   push:
@@ -32,8 +13,8 @@ jobs:
           src: 'github/CoderFXJ'
           dst: 'gitee/GiteeFXJ'
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token:  ${{ secrets.GITEE_TOKEN }}
-          static_list: "learn-typescript"
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: 'vnotes'
           force_update: true
           debug: true
           

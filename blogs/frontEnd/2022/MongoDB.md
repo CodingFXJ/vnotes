@@ -11,7 +11,7 @@ categories:
 
 ### 一、相关概念
 
-MongoDB是文档型的NoSQL数据库
+**MongoDB是文档型的NoSQL数据库**。
 
 ![image-20220508194905648](https://vnote-bucket.oss-cn-shanghai.aliyuncs.com/image-20220508194905648.png)
 
