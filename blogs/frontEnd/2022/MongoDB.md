@@ -9,7 +9,7 @@ categories:
 
 
 
-### 一、相关概念
+## 一、相关概念
 
 **MongoDB是文档型的NoSQL数据库**。
 
@@ -32,7 +32,7 @@ categories:
 
 
 
-### 二、数据库操作
+## 二、数据库操作
 
 **查看所有数据库**
 
@@ -55,7 +55,7 @@ db.dropDatabase() 	#删除当前所在库
 
 
 
-### 三、集合相关操作
+## 三、集合相关操作
 
 ```shell
 show collections; 	# 查看数据库集合	show tables;
@@ -66,9 +66,9 @@ db.users.drop(); 	#删除集合
 
 
 
-### 四、文档相关操作
+## 四、文档相关操作
 
-#### 1.查询
+### 1.查询
 
 ```shell
 db.users.find() 	#查询所有 SELECT * from users  
@@ -166,7 +166,7 @@ db.users.find().distinct('字段')
 
 ![image-20220507231641824](https://vnote-bucket.oss-cn-shanghai.aliyuncs.com/image-20220507231641824.png)
 
-#### 2.插入
+### 2.插入
 
 - **单条文档**
 
@@ -194,7 +194,7 @@ for(let i =0;i<5;i++){
 
 
 
-#### 3.删除
+### 3.删除
 
 ```shell
 db.users.remove({}) 	#删除所有文档
@@ -207,7 +207,7 @@ db.getCollection('users').deleteMany({age:18})	 #删除满足条件的数据
 
 
 
-#### 4.更新
+### 4.更新
 
 语法 :
 
@@ -240,6 +240,248 @@ db.getCollection('users').update({age:18},{$set:{age:24,likes:['动漫','美女'
 
 
 
-### 五、[Mongoose学习](http://www.mongoosejs.net/docs/index.html)
+## 五、[Mongoose学习](http://www.mongoosejs.net/docs/index.html)
 
- 
+### 1.插入
+
+```js
+exports.register = async (req,res,next)=>{
+  try {
+     let user = new User(req.body.user)
+     await user.save() 
+     //转化为json才能移除密码
+     user = user.toJSON()
+     delete user.password
+     res.send({
+       msg:'注册成功!',
+       user
+     });
+  } catch (error) {
+    next(error)
+  }
+}
+```
+
+
+
+### 2.删除
+
+```js
+exports.deleteArticle = async (req,res,next)=>{
+  try {
+    let id = mongoose.Types.ObjectId(req.body.id)
+    const result = await Article.findByIdAndRemove(id)
+    console.log('result: ', result);
+    res.succ({
+      msg:'文章删除成功!'
+    })
+  } catch (error) {
+    res.errs(error)
+  }
+}
+```
+
+
+
+### 3.更新
+
+```js
+exports.updateArticle =async (req,res,next)=>{
+  const article = req.body.article
+  try {
+    let {_id:id,title,desc,body,tagList} = req.body.article 
+    
+    let article  = await  Article.findByIdAndUpdate(id, { $set:req.body.article},  {new:true})
+      res.succ({
+        msg:'文章更新成功!',
+        article:article
+      })
+  } catch (error) {
+    res.errs(error)
+  }
+}
+```
+
+
+
+### 4.查询
+
+```js
+//获取一个文章
+
+exports.getArticleById = async (req,res,next)=>{
+  try {
+      //映射用户
+    const article = await Article.findById(req.params.articleId).populate('author')
+    if(!article){
+     return  res.errs('文章不存在!')
+    }
+    res.succ({
+      msg:'文章查询成功!',
+      article
+    })
+  } catch (error) {
+    res.errs(error)
+  }
+}
+```
+
+
+
+```js
+// 获取文章列表
+exports.getArticles = async (req,res,next)=>{
+  try {
+   const {limit=20,offset=0,tag ,author,favorited,sortBy}  = req.body.conditions  || {}
+    const filter = {}
+    if(tag){
+      filter.tagList = tag
+    }
+    //某个作者的文章
+    if(author){
+      const user = await User.findOne({username:author})
+        filter.author =user? user._id:null;
+    }
+    const articleList = await Article.find(filter).skip(Number.parseInt(offset))
+    .limit(Number.parseInt(limit)).sort({creeateAt:-1,...sortBy})
+
+    const articleCount = await Article.find(filter).skip(offset).limit(limit).count()
+    const totalCount = await Article.countDocuments()
+    if(!articleList){
+     return  res.errs('暂无文章!')
+    }
+    res.succ({
+      msg:'文章查询列表成功!',
+      articleList,
+      articleCount,
+      totalCount
+    })
+  } catch (error) {
+    res.errs(error)
+  }
+}
+```
+
+
+
+### 5.模型
+
+📝model/index.js
+
+```js
+const mongoose = require('mongoose');
+const { dbUri  } = require('../config/config.default')
+mongoose.connect(dbUri);
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongDB数据库连接失败!'));
+
+db.once('open', function() {
+  console.log('MongDB数据库连接成功!');
+});
+const Cat = mongoose.model('Cat', { name: String });
+
+module.exports = {
+  User:mongoose.model('User',require('./user')),
+  Article:mongoose.model('Article',require('./article')),
+}
+```
+
+
+
+📝model/base.js
+
+```js
+//基础模型 
+module.exports =  {
+  createAt:{
+    type:Date,
+    default:Date.now
+  },
+  updtedAt:{
+    type:Date,
+    default:Date.now
+  }
+}
+```
+
+
+
+📝model/user.js
+
+```js
+
+const mongoose =  require('mongoose')
+const baseSchema = require('./base')
+const md5 = require('../util/md5')
+//用户模型
+const userSchema = new mongoose.Schema({
+  ...baseSchema,
+  username:{
+    type:String,
+    required:true
+  },
+  password:{
+    type:String,
+    required:true,
+    set:value => md5(value),
+    select:false,
+  },
+  email:{
+    type:String,
+    required:true
+  },
+  bio:{
+    type:String,
+    default:null
+  },
+  image:{
+    type:String,
+    default:null
+  },
+  
+})
+module.exports = userSchema
+```
+
+
+
+📝model/article.js
+
+```js
+ const mongoose =  require('mongoose')
+const Schema = mongoose.Schema
+const baseSchema = require('./base')
+//文章模型
+const articleSchema = new mongoose.Schema({
+  ...baseSchema,
+  title:{
+    type:String,
+    required:true
+  },
+  desc:{
+    type:String,
+    required:true
+  },
+  body:{
+    type:String,
+    required:true
+  },
+  favoritesCount:{
+    type:Number,
+    default:0
+  },
+  tagList:{
+    type:[String],
+    default:null
+  },
+   author:{
+     type:Schema.Types.ObjectId,
+     ref:'User',
+     required:true,
+   }
+})
+module.exports = articleSchema
+```
+

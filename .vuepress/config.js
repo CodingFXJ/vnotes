@@ -5,6 +5,7 @@ module.exports = {
     "description": "Wait a minute...",
     "dest": "public",
     "base": "/vnotes/",
+    // "base":"./",
     "head": [
         [
             "link",
