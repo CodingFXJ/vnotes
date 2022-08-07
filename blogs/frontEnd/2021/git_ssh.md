@@ -39,9 +39,22 @@ ssh-keygen -t rsa -C '8888888@qq.com'  #换成自己邮箱,可以随便填,相�
   ssh-add ~/.ssh/id_rsa_github_qq
   ```
 
-> (若提示 `Could not open a connection to your authentication agent`) 
->
-> 先执行`ssh-agent bash` 再执行上面代码
+1. 若提示 `Could not open a connection to your authentication agent`
+
+​	先执行`ssh-agent bash` 再执行上面代码
+
+
+
+2. 报错: `Error connecting to agent: No such file or directory`
+
+​	解决方法：【**以管理员身份运行**】在 PowerShell 执行
+
+```bash
+Set-Service ssh-agent -StartupType Manual
+Start-Service ssh-agent
+```
+
+
 
 + **查看私钥列表**
 
