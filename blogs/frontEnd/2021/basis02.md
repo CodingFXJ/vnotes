@@ -79,8 +79,6 @@ let newfn = fn.bind(obj, 10, 20, 30)//不会立即执行, 返回一个新函数 
 
 ### 2.filter返回值属于浅拷贝
 
-![image-20221003174628372](C:\Users\30100\AppData\Roaming\Typora\typora-user-images\image-20221003174628372.png)
-
 
 
 ### 3.可变参数
