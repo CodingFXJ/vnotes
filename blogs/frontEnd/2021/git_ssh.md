@@ -33,11 +33,11 @@ ssh-keygen -t rsa -C '8888888@qq.com'  #换成自己邮箱,可以随便填,相�
 
 ![image-20220416212417100](https://vnote-bucket.oss-cn-shanghai.aliyuncs.com/image-20220416212417100.png)
 
-+ **添加私钥到ssh-agent中 ，出现`Identity added`表示成功**
+### 3.添加私钥到ssh-agent中 ，出现`Identity added`表示成功
 
-  ```bash
-  ssh-add ~/.ssh/id_rsa_github_qq
-  ```
+```bash
+ssh-add ~/.ssh/id_rsa_github_qq
+```
 
 1. 若提示 `Could not open a connection to your authentication agent`
 
@@ -47,12 +47,18 @@ ssh-keygen -t rsa -C '8888888@qq.com'  #换成自己邮箱,可以随便填,相�
 
 2. 报错: `Error connecting to agent: No such file or directory`
 
-​	解决方法：【**以管理员身份运行**】在 PowerShell 执行
+​	解决方法：【**以管理员身份运行**】在 `PowerShell` 执行
 
 ```bash
 Set-Service ssh-agent -StartupType Manual
 Start-Service ssh-agent
 ```
+
+​	
+
+3. 报错 `unable to start ssh-agent service, error :1058`
+
+​	以**管理员身份**打开终端，执行`Set-Service -Name ssh-agent -StartupType automatic`
 
 
 
@@ -62,8 +68,6 @@ Start-Service ssh-agent
  ssh-add -l
  ```
 
-
-
 **出现此提示表示未配置成功，重新检查步骤配置**
 
 ```bash
@@ -72,28 +76,39 @@ fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
-
+                                                                                             
 ```
 
-+ 创建config文件，并编辑 `vi config`
+### 4.创建`config`件，打开编辑 
+
+> 注意：文件名就是`config`，没有文件后缀，编辑完保存前记得去掉注释
 
 ```bash
-Host github.com 
-HostName github.com
+Host github.com #github主机地址
+HostName github.com #github主机名
 PreferredAuthentications publickey
-IdentityFile ~/.ssh/id_rsa_git_gmail #私钥地址
+IdentityFile ~/.ssh/id_rsa_github #私钥地址
+
+Host gitlab.xxx.cn  #公司gitlab主机地址
+HostName gitlab.xxx.cn	#gitlab主机名
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_gitlab	#私钥地址
 ```
 
-+ 测试连接是否成功
++ 测试连接是否成功，显示出这句话表示成功啦，可以看到自己账户名
 
+  `Hi CoderFXJ! You've successfully authenticated, but GitHub does not provide shell access.`
+  
   ```bash
-  ssh -T git@giee.com
+  ssh -T git@gitee.com
   #或
   ssh -T git@github.com
+  
+  ssh -T git@gitlab.xxx.cn
   ```
 
   
-
   
-
+  
+  
    
