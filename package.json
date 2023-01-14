@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "vuepress dev . --open --host \"localhost\"",
         "build": "vuepress build .",
+        "build:remote": "vuepress build . --dest /opt/nginx/www/html/vnotes",
         "d": "bash deploy.sh"
     },
     "devDependencies": {
